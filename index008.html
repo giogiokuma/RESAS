@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bar Chart UI example</title>
+<style>
+html, body {
+    width:960px;
+    height:500px;
+    margin:0;
+    padding:0;
+}
+svg {
+    width:969px;
+    height:500px;
+    border:1px solid gray;
+}
+
+
+</style>
+</head>
+<body>
+
+<svg>
+<g id="stage"></g>
+<g id="overlay"></g>
+<g id="info"></g>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+ 
+<script>
+(function(){
+    "use strict";
+    
+    var svg = d3.select('svg');
+    var w = 960;
+    var h = 500;
+            
+    var margin ={
+            top:10,
+            left:100
+        }   
+        
+    var dataSet = [
+        {id:1, label:'A', value:100, description:'ここにAに関する説明文を書きます。', color:"#c428cc"},
+        {id:2, label:'B', value:80, description:'ここにＢに関する説明文を書きます。', color:"#2861cc"},
+        {id:3, label:'C', value:120, description:'ここにＣに関する説明文を書きます。', color:"#cc287d"},
+        {id:4, label:'D', value:50, description:'ここにＤに関する説明文を書きます。', color:"#c4cc28"},
+        {id:5, label:'E', value:90, description:'ここにＥに関する説明文を書きます。', color:"#cca828"},
+        {id:6, label:'F', value:30, description:'ここにＦに関する説明文を書きます。', color:"#6fcc28"}
+    ];
+    
+    var valueMax = d3.max(dataSet, function(d){ return +d.value });
+    var yScale = d3.scale.linear().domain([0, valueMax]).range([0, h-margin.top]);
+    
+    
+    var stage = svg.select('#stage');
+    var overlay = svg.select('#overlay');
+    
+    var info = svg.select('#info');
+    
+    var label = info.append('text')
+        .attr({
+            'x':20,
+            'y':50,
+            'font-size': 24,
+            'fill':'white'
+        })
+    
+    
+    var description = info.append('text')
+        .attr({
+            'x':20,
+            'y':100,
+            'fill':'white'
+        })  
+    
+    var barChart = stage.selectAll('rect')
+        .data(dataSet)
+        .enter()
+        .insert('rect')
+        .attr({
+            'id':function(d){ return d.id },
+            'x': function(d, i){ return (i * 100) +  margin.left},
+            'y': function(d){ return h - yScale(d.value)},
+            'height':function(d){ return yScale(d.value)},
+            'width':50,
+            'fill':function(d){ return d.color },
+        });
+    
+    
+    
+    barChart.on('click', function(d, i){
+        //棒グラフのコピーを作る
+        var copryRect = overlay.append('rect')
+            .on('click', function(){        //コピーがクリックされた際の処理(閉じる)
+                label.text("").style('opacity', 0);
+                description.text("").style('opacity', 0);
+                copryRect.transition().attr({
+                    'x': (i * 100) +  margin.left,
+                    'y': h - yScale(d.value),
+                    'height':yScale(d.value),
+                    'width':50,
+                })
+                .call(endall, function(){
+                    copryRect.remove();         
+                })
+            });
+
+        
+        //オリジナルからattributesを取得し、コピーに適用する
+        Array.prototype.slice.call(d3.select(this).node().attributes).forEach(function(d){
+            copryRect.attr(d.name, d.value)
+        });
+        
+        //コピーを画面いっぱいまで広げる
+        copryRect.transition().attr({
+            x:0,
+            y:0,
+            width:w,
+            height:h
+        })
+        .call(endall, function(){
+            label.text(d.label).transition().style('opacity', 1);
+            description.text(d.description).transition().style('opacity', 1);
+        });
+    })
+    
+    
+    function endall(transition, callback) { 
+        var n = 0; 
+        transition 
+            .each(function() { ++n; }) 
+            .each("end", function() { if (!--n) callback.apply(this, arguments); }); 
+    };
+})();   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

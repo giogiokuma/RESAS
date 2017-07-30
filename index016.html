@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #dfd;
+}
+
+hr {
+  margin-top:2px;
+  margin-bottom:2px;
+}
+
+.red {
+  color:red;
+}
+</style>
+</head>
+
+<body>
+<script>
+  function print(arg){
+    if(typeof arg === 'object') { document.write(JSON.stringify(arg)); }
+    else { document.write(arg); }
+  }
+
+  function hr(){
+    document.write('<hr>');
+  }
+  function br(){
+    document.write('<br>');
+  }
+
+
+  /************************************
+  * 配列操作
+  ***********************************/
+  print('<b>配列操作</b>');
+  br();
+
+  var dataArray = [10, 20, 50, 40, 30, 600];
+  print('<span class="red">var dataArray = [10, 20, 50, 40, 30, 600];</span>');
+  hr();
+
+  //昇順
+  print('dataArray.sort(d3.ascending))=>');
+  print(dataArray.sort(d3.ascending));
+  hr();
+
+  //降順
+  print('dataArray.sort(d3.descending))=>');
+  print(dataArray.sort(d3.descending));
+  hr();
+
+
+  //最小値取得
+  print('d3.min(dataArray)=>');
+  print(d3.min(dataArray));
+  hr();
+
+  //最大値取得
+  print('d3.max(dataArray)=>');
+  print(d3.max(dataArray));
+  hr();
+
+  //最小値・最大値取得
+  print('d3.extent(dataArray)=>');
+  print(d3.extent(dataArray));
+  hr();
+
+  //合計
+  print('d3.sum(dataArray)=>');
+  print(d3.sum(dataArray));
+  hr();
+
+  //平均
+  print('d3.mean(dataArray)=>');
+  print(d3.mean(dataArray));
+  hr();
+
+
+  //中央値
+  print('d3.median(dataArray)=>');
+  print(d3.median(dataArray));
+  hr();
+
+
+  //分位数
+  print('d3.quantile(dataArray.sort(), 1)=>');
+  print(d3.quantile(dataArray.sort(), 1));
+  br();
+  print('d3.quantile(dataArray.sort(), 0.5)=>');
+  print(d3.quantile(dataArray.sort(), 0.5));
+  br();
+  print('d3.quantile(dataArray.sort(), 0.25)=>');
+  print(d3.quantile(dataArray.sort(), 0.25));
+  hr();
+
+  //二分木
+  print('d3.bisect(dataArray, 30)=>');
+  print(d3.bisect(dataArray, 30));
+  br();
+  print('d3.bisectLeft(dataArray, 30)=>'); //配列の中に指定した数値以下の数値が幾つあるか
+  print(d3.bisectLeft(dataArray, 30));
+  br();
+  print('d3.bisectRight(dataArray, 30)=>');//配列の中に指定した数値以上の数値が幾つあるか
+  print(d3.bisectRight(dataArray, 30));
+  hr();
+
+  //シャッフル
+  print('d3.shuffle(dataArray)=>');
+  print(d3.shuffle(dataArray));
+  hr();
+
+  print('<b>Sets</b>');
+  br();
+  print('<span class="red">var dataSet = d3.set(dataArray)</span>');
+  var dataSet = d3.set(dataArray);
+  br();
+  print(dataSet);
+  hr();
+
+  //探索
+  print('dataSet.has(20)=>');
+  print(dataSet.has(20));
+  br();
+  print('dataSet.has(120)=>');
+  print(dataSet.has(120));
+  hr();
+
+
+  //追加
+  print('dataSet.add(199);');
+  br();
+  print('dataSet=>');
+  dataSet.add(199)
+  print(dataSet);
+  hr()
+
+  //削除
+  print('dataSet.remove(600);');
+  br();
+  print('dataSet=>');
+  dataSet.remove(600)
+  print(dataSet);
+  hr()
+
+  //値取得
+  print('dataSet.values()=>');
+  print(dataSet.values());
+  hr();
+
+
+
+  /************************************
+  * 連想配列操作
+  ***********************************/
+  print('<b>連想配列操作</B>');
+  br();
+
+
+  var dataObj = {'x':10, 'y':20, 'z':30}
+  print('<span class="red">var dataObj=');
+  print(dataObj);
+  print('</span>');
+  hr();
+
+  //キー取得
+  print('d3.keys(dataObj)=>');
+  print(d3.keys(dataObj));
+  hr();
+
+  //値取得
+  print('d3.values(dataObj)=>');
+  print(d3.values(dataObj));
+  hr();
+
+  //{key:キー, value:値}に変換
+  print('d3.entries(dataObj)=>');
+  print(d3.entries(dataObj));
+  hr();
+
+
+
+  /************************************
+  * Maps
+  ***********************************/
+  print('<b>Maps</b>');
+  br();
+
+  print('<span class="red">var dataMap = d3.map(dataObj)</span>');
+  var dataMap = d3.map(dataObj);
+  br();
+  print(dataMap);
+  hr();
+
+  //探索
+  print('dataMap.has("y")=>');
+  print(dataMap.has("y"));
+  br();
+  print('dataMap.has("q")=>');
+  print(dataMap.has("q"));
+  hr();
+
+  //値取得
+  print('dataMap.get("y")=>');
+  print(dataMap.get("y"));
+  hr();
+
+
+  //追加
+  print('dataMap.set("a", 10);');
+  br();
+  print('dataMap=>');
+  dataMap.set("a", 10)
+  print(dataMap);
+  hr()
+
+  //削除
+  print('dataMap.remove("z");');
+  br();
+  print('dataMap=>');
+  dataMap.remove("z")
+  print(dataMap);
+  hr()
+
+
+  //キー取得
+  print('dataMap.keys()=>');
+  print(dataMap.keys());
+  hr();
+
+  //値取得
+  print('dataMap.values()=>');
+  print(dataMap.values());
+  hr();
+
+  //{key:キー, value:値}に変換
+  print('dataMap.entries()=>');
+  print(dataMap.entries());
+  hr();
+
+
+
+
+  /************************************
+  * Array Operators
+  ***********************************/
+  print('<b>Array Operators</b>');
+  br();
+
+  //引数１〜引数２までの値を含んだ配列を生成（引数３はステップ数：デフォルト１）
+  print('d3.range(10, 50, 5)=>');
+  print(d3.range(10, 50, 5));
+  hr();
+
+  //引数１の配列を引数２で指定した順番に並べ替えてあらたな配列を生成
+  print('d3.permute(["a", "b", "c"], [1, 2, 0]) =>');
+  print(d3.permute(["a", "b", "c"], [1, 2, 0]) );
+  hr();
+
+
+  //値をarrayオブジェクトに変換した配列を生成
+  print('d3.zip(dataArray)=>');
+  print(d3.zip(dataArray));
+  hr();
+
+  
+</script>
+</body>

@@ -1,0 +1,42 @@
+
+https://shimz.me/blog/d3v4/5189
+**RESAS （リーサス）RESAS Regional Economy and Society Analyzing System 　とは**
+  内閣官房（まち・ひと・しごと創生本部事務局）が地方創生の実現に向けて、地域に紐づいた官民ビッグデータ（産業、人口、観光、農業など）を分かり易く「見える化」したシステム
+  （地域経済分析システム）に掲載しているデータをプログラムから取得できるAPIが、11月1日公開された。
+  
+  
+  **「RESAS API ハッカソン」**
+  「REASASに掲載されている地域データ」と「このハッカソンのために提供・サポートされた地域データ」、合計20種類以上のデータを組み合わせて
+  	「今後の日本に必要な新しいビジネスを実現するアプリケーション」を創出
+  	* ビッグデータ時代の新しいサービス（価値）作りに挑戦
+  	* このハッカソン向けに限定公開された民間データを使ってみたい方
+  	* 起業、新規事業を目指して一歩踏み出したい方
+  	
+  	**RESAS アプリコンテスト**
+  	https://opendata.resas-portal.go.jp/contest/index.html
+  	
+  	**STARTUP HUB TOKYO**
+  	https://startuphub.tokyo/
+  	
+------------------------------
+レポート：In Japan: The Rising Need for Data and Analysts
+https://pointwest.com.ph/blog/japans-rising-need-data-analysts/
+  	
+------------------------------
+**RESAS API **
+https://opendata.resas-portal.go.jp/docs/api/v1/index.html
+
+**ArcGIS Hub**
+
+------------------------------
+  https://opendata.resas-portal.go.jp/
+  東京で考える地方創生！RESAS API ハッカソン
+  https://techplay.jp/event/603597
+
+------------------------------
+
+
+清水さんのページ
+1. D3 からAPI 
+
+

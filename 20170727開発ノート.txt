@@ -1,0 +1,97 @@
+考えていたこと
+- 論文の資料になるデータになること = 1. 証明できること 2. 裏ずけがある
+
+- いわゆるデータであること
+
+- 操作が簡単
+
+20170730
+k. index023.html > 総人口 line チャート
+
+l. index024.html > line チャート　複数
+https://bl.ocks.org/ocarneiro/a083012a5899c46390681352a549220d
+
+m. index025.html > line チャート　人口複数
+
+
+-----------
+
+20170730
+海外メディアが使っている4つのデータ関連ツール
+https://medium.com/tokyobeta-journal/%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8A%E3%83%AA%E3%82%B9%E3%83%88%E5%90%91%E3%81%91%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AA%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%84%E3%83%BC%E3%83%AB-add8ab156afb
+
+
+silk
+https://www.silk.co/
+
+
+d3js ライブラリ
+http://bl.ocks.org/enjalot/raw/211bd42857358a60a936/
+-----------
+
+20170729
+清水さんのブログ
+https://shimz.me/blog/d3v4/5189
+
+ブロックス
+https://bl.ocks.org/shimizu
+
+**テスター**
+http://shimz.me/example/RESAS_API/viewer/index.html
+
+
+a. index014.html > 農業部門 ok
+
+b. index015.html > 人口 ok
+https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=11362&prefCode=11
+
+c. index016.html > array manipulation  
+https://bl.ocks.org/shimizu/cceab22c96342b3cc929
+
+d.  トランジション using Promise
+https://bl.ocks.org/shimizu/8998fb9899e65b3196d5690182b674cb
+
+
+e. index017.html > Pie チャート d3js v4  -> ok
+https://bl.ocks.org/shimizu/f90651541575f348a129444003a73467
+
+
+f. index018.html > イメージギャラリー
+https://bl.ocks.org/shimizu/79409cca5bcc57c32ddae0a5f0a1a564
+
+g. index019.html > bar チャート d3js ver.4
+https://bl.ocks.org/shimizu/a4c0c940b19d42cf8ebca29e20573aca
+
+h. index020.html > bar chart シンプル
+https://bl.ocks.org/d3noob/bdf28027e0ce70bd132edc64f1dd7ea4
+
+
+i. index021.html > 水平　barchart シンプル
+https://bl.ocks.org/alandunning/7008d0332cc28a826b37b3cf6e7bd998
+
+j. index022.html > ラインチャート　シンプル
+https://bl.ocks.org/d3noob/402dd382a51a4f6eea487f9a35566de0
+
+
+http://bl.ocks.org/enjalot/raw/211bd42857358a60a936/
+
+
+-------------
+
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+...
+<script>
+var query="<request-url>";
+d3.request(query)
+  .post()
+  .user("login-id")
+  .password("login-password")
+  .on("beforesend", function(request) { request.withCredentials = true; })
+  .get(function(error, data) {
+    //scripts to process result
+   }
+ );
+ 
+ <script>

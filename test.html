@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>D3: Subselection Example</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <style type="text/css">
+
+body {
+  font: 13px sans-serif;
+}
+
+ul {
+  list-style: none;
+  font-weight: bold;
+}
+
+li {
+  margin:  0.2em 0.0em;
+  padding: 0.5em 1.0em;
+  font-weight: normal;
+}
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+var questions = [
+  { "prompt": "Why is the sky blue?",
+    "responses": [
+      "Because the color blue was on sale at Wallmart",
+      "Because blue is the prettiest color",
+      "Because the air molecules difract blue light more than any other color"
+    ]
+  },
+  { "prompt": "Why are leaves usually green?",
+    "responses": [
+      "So green caterpillars can hide better.",
+      "Because leaves can more easily make energy with green light",
+      "Because leaves absorb red and blue light so it's green that is reflected"
+    ]
+  }
+];
+
+d3.select("body").selectAll("ul")
+    .data(questions)
+  .enter().append("ul")
+    .text(function(d) { return d.prompt })
+    .selectAll("li")
+      .data(function(d) { return d.responses; })
+    .enter().append("li")
+      .text(function(d) { return d })
+      .style("background-color", function(d, i) { return i % 2 ? "#eee" : "#ddd"; });
+
+    </script>
+
+  </body>
+</html>

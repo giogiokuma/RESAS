@@ -1,0 +1,505 @@
+{
+    "crs": {
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }, 
+        "type": "name"
+    }, 
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    130.806806, 
+                    33.873823, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link":"http://kyuyama.jp/kyushuyamaguchi/ky_fukuoka_01.html",
+                "name": "官営八幡製鐵所関連施設"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.455995, 
+                    33.013895, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_fukuoka_02.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_fukuoka_02/map.jpg",
+                "name": "三池炭鉱 宮原坑"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.417049, 
+                    33.014143, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_fukuoka_03.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_fukuoka_03/map.jpg",
+                "name": "三池港"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.339437, 
+                    33.206915, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_saga_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_saga_01/map.jpg",
+                "name": "三重津海軍所跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    129.862481, 
+                    32.726931, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_01/map.jpg",
+                "name": "小菅修船場跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    129.86911, 
+                    32.734368, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link":"http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_02.html",
+                "img":"http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_02/map.jpg",
+                "name": "旧グラバー住宅"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    129.75131, 
+                    32.664124, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_03.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_03/map.jpg",
+                "name": "高島炭坑"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    129.738407, 
+                    32.628244, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_04.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_04/map.jpg",
+                "name": "端島炭坑"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    129.855853, 
+                    32.742876, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_05.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_nagasaki_05/map.jpg",
+                "name": "三菱長崎造船所関連施設"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.448511, 
+                    33.001245, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kumamoto_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_kumamoto_01/map.jpg",
+                "name": "三池炭鉱 万田坑"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.453334, 
+                    32.623364, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kumamoto_02.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_kumamoto_02/map.jpg",
+                "name": "三角西(旧)港"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.577445, 
+                    31.617903, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_01/map.jpg",
+                "name": "旧集成館（反射炉跡）"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.576294, 
+                    31.617313, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_02.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_02/map.jpg",
+                "name": "旧集成館（機械工場）"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.574189, 
+                    31.615696, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_03.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_03/map.jpg",
+                "name": "旧集成館（旧鹿児島紡績所技師館）"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.6005762, 
+                    31.6619403, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_04.html",
+                "img": "http://naughtyboydesign.com/kyuyama_test/kyushuyamaguchi/ky_kagoshima_04/map.jpg",
+                "name": "寺山炭窯跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.55221350000002, 
+                    31.6471058, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_05.html",
+                "img": "http://naughtyboydesign.com/kyuyama_test/kyushuyamaguchi/ky_kagoshima_05/map.jpg",
+                "name": "関吉の疎水溝"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    131.418296, 
+                    34.428142, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_03.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_03/map.jpg",
+                "name": "萩反射炉"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    131.412127, 
+                    34.430063, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_04.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_04/map.jpg",
+                "name": "恵美須ヶ鼻造船所跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    131.383443, 
+                    34.417834, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_05.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_05/map.jpg",
+                "name": "萩城下町"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    131.5387486, 
+                    34.5052127, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_06.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_06/map.jpg",
+                "name": "大板山たたら製鉄遺跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    131.4173, 
+                    34.412139, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_07.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_07/map.jpg",
+                "name": "松下村塾"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    141.682477, 
+                    39.34384, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_iwate_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_iwate_01/map.jpg",
+                "name": "橋野鉄鉱山・高炉跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    138.962202, 
+                    35.039554, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_shizuoka_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_shizuoka_01/map.jpg",
+                "name": "韮山反射炉"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.805229, 
+                    33.869765, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/kn_fukuoka_01.html",
+                "name": "官営八幡製鐵所関連施設（東田第一高炉跡・西田岸壁）"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.686431, 
+                    33.661761, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/kn_fukuoka_02.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/kn_fukuoka_02/map.jpg",
+                "name": "旧伊藤伝右衛門邸"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.813908, 
+                    33.640852, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/kn_fukuoka_03.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/kn_fukuoka_03/map.jpg",
+                "name": "旧三井田川鉱業所 伊田竪坑櫓、伊田竪坑第一・第二煙突"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    129.972097, 
+                    33.454398, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/kn_saga_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/kn_saga_01/map.jpg",
+                "name": "旧高取家住宅"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.564474, 
+                    31.596631, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/kn_kagoshima_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/kn_kagoshima_01/map.jpg",
+                "name": "新波止砲台跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.570096, 
+                    31.604636, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_04.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_kagoshima_04/map.jpg",
+                "name": "祇園之洲砲台跡"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.86825, 
+                    33.977798, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_02.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_02/map.jpg",
+                "name": "六連島灯台"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    130.970491, 
+                    33.973576, 
+                    0
+                ], 
+                "type": "Point"
+            }, 
+            "properties": {
+                "link": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_01.html",
+                "img": "http://kyuyama.jp/kyushuyamaguchi/ky_yamaguchi_01/map.jpg",
+                "name": "前田砲台跡"
+            }, 
+            "type": "Feature"
+        }
+    ], 
+    "type": "FeatureCollection"
+}

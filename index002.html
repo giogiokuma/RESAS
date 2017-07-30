@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RESAS API</title>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.min.js"></script>
+   <script src="resas_api.js"></script>
+</head>
+<body>
+
+
+
+<script>
+var api = RESASAPI();
+api.apikey("2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+
+api.type("都道府県一覧") 
+
+api.param({
+    "prefCode":"11",
+    "sicCode":"E",
+    "simcCode":"20",
+})
+
+console.log(api.url())
+
+api.on('load', function(data) {
+    console.log(data)
+})
+
+api.send()
+
+</script>
+</body>
+</html>

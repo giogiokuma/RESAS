@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+    
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+}
+  </style>
+</head>
+
+<body>
+<div id="app">
+</div>
+
+<!-- load the d3.js library -->     
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <script>
+var url = "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=11362&prefCode=11";
+d3.request(url)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback);
+
+function callback(json){
+// Feel free to change or delete any of the code you see in this editor!
+    var svg = d3.select("body").append("svg")
+      .attr("width", 960)
+      .attr("height", 300)
+
+    var margin = {left:30, right:30, top: 10, bottom: 20}
+    var width = svg.attr("width") - margin.left - margin.right;
+    var height = svg.attr("height") - margin.bottom - margin.top;
+    
+    // TODO: nest data with d3.nest
+    var data = [];
+data[0] = json.result["data"][0]["data"];
+data[1] = json.result["data"][1]["data"];
+data[2] = json.result["data"][2]["data"];
+data[3] = json.result["data"][3]["data"];
+    
+    var x = d3.scaleTime()
+      .rangeRound([0, width]);
+    var x_axis = d3.axisBottom(x);
+    
+    var y = d3.scaleLinear()
+      .rangeRound([height, 0]);
+    var y_axis = d3.axisBottom(y);
+
+    
+}
+
+
+
+
+
+
+
+
+  </script>
+</body>
