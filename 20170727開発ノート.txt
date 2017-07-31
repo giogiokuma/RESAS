@@ -1,3 +1,70 @@
+20170731
+leaflet.js を使おう
+
+**web地図**
+https://shimz.me/blog/map/4268
+
+**geojsonを使いこなすためのWebサービス**
+https://shimz.me/blog/web/3789
+
+**geojson　などに変換 **
+http://mapshaper.org/
+
+geojsonlint**
+http://geojsonlint.com/
+
+**topojson**
+https://github.com/topojson/topojson
+---------------------------------
+20170731
+prefCode 群馬県 = 10
+n. index026.html > index006.html を元にマップに観光資源  =>  ダメ　geojson ファイルが必要
+RESAS  > https://opendata.resas-portal.go.jp/docs/api/v1/tourism/attractions.html
+
+https://opendata.resas-portal.go.jp/api/v1/tourism/attractions?prefCode=10&cityCode=-
+
+m. index027.html > ★★★ leaflet.js 基本
+//マーカー＆ポップアップ追加
+var marker = L.marker([36.3219088　, 139.0032936])
+	.addTo(map);
+
+o.
+
+
+---------------------------------
+**geojson　て何だろう**
+6つのタイプ
+Point
+LineString
+Polygon
+MultiPoint
+MultiLineString
+MultiPolygon
+
+http://blog.qaramell.com/hunzy/8191
+{ "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature",
+      "properties": {"prop0": "好きな値！"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [102.0, 0.5]
+      }
+    },
+    { "type": "Feature",
+      "properties": {"prop0": "好きな値！"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
+            [100.0, 1.0], [100.0, 0.0] ]
+          ]
+      }
+    },
+    //...たくさん続く
+  ]
+}
+---------------------------------
 考えていたこと
 - 論文の資料になるデータになること = 1. 証明できること 2. 裏ずけがある
 
@@ -12,7 +79,7 @@ l. index024.html > line チャート　複数
 https://bl.ocks.org/ocarneiro/a083012a5899c46390681352a549220d
 
 m. index025.html > line チャート　人口複数
-
+完成 => できそう　★★★
 
 -----------
 
