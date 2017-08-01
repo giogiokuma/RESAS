@@ -1,3 +1,22 @@
+20170801
+leaflet.js + d3js
+https://shimz.me/blog/d3-js/3517
+
+基本的な使い方
+https://shimz.me/blog/leaflet-js/4142
+
+l. index026.html > leaflet.js + マーカーを足す
+
+m. index027.html > d3.js + leaflet.js  両方
+
+n. index028.html > 特産品 ★★★
+
+o.
+
+
+
+
+-----------
 考えていたこと
 - 論文の資料になるデータになること = 1. 証明できること 2. 裏ずけがある
 

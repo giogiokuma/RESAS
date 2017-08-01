@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-language" content="ja">
+<title>Leaflet QuickStart 1</title>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet-src.js"></script><style>
+
+<style>
+html, body  {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var url = "https://opendata.resas-portal.go.jp/api/v1/tourism/attractions?prefCode=10&cityCode=-"
+d3.request(url)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback);
+function callback(json){
+  console.log(json.result["data"][0].lat)
+
+
+
+var map = L.map('map').setView([36.3219088　, 139.0032936], 14);
+
+var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+
+L.tileLayer(
+    'http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+    {
+        attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>"
+    }
+).addTo(map);
+
+var marker = L.marker([json.result["data"][0].lat, json.result["data"][0].lng])
+        .bindPopup("<h1>Hello! Leaflet!</h1>")
+        .addTo(map);
+
+//for (var i = 0; i < json.result["data"].length; i++) {
+  //var marker = L.marker([json.result["data"][i].lat　, json.result["data"][i].lng]])
+  //  .bindPopup("<h1>Hello! Leaflet!</h1>")
+  //  .addTo(map);
+//}
+
+
+}
+
+
+</script>
+</body>
+</html>

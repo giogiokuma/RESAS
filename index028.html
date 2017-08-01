@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<head>
+<title>Leaflet QuickStart 1</title>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+<script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+</head>
+<body>
+
+<div style='width:1200px;height:1000px'></div>
+<script>
+
+
+var map = new L.Map(d3.select('div').node()).setView([36.4219088　, 139.0032936], 10);
+var tile = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+
+var url = "https://opendata.resas-portal.go.jp/api/v1/tourism/attractions?prefCode=10&cityCode=-"
+d3.request(url)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback);
+
+function callback(json){
+  console.log(json.result["data"])
+
+var tile = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var marker = L.marker([json.result["data"][0].lat　, json.result["data"][0].lng])
+        .bindPopup("<h1>Hello! Leaflet!</h1>")
+        .addTo(map);
+var marker = L.marker([json.result["data"][1].lat　, json.result["data"][1].lng])
+        .bindPopup("<h1>Hello! Leaflet!</h1>")
+        .addTo(map);
+
+var arr = []
+for (var i = 2; i < json.result["data"].length; i++) {
+    arr = json.result["data"][i].resourceName;
+    //console.log(arr);
+    var marker = L.marker([json.result["data"][i].lat, json.result["data"][i].lng])
+        .bindPopup(arr)
+        .addTo(map);
+};
+
+
+}
+
+
+</script>

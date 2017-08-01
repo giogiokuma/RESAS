@@ -22,7 +22,7 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
   <script>
-var url = "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=11362&prefCode=11";
+var url = "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=11362&prefCode=11"
 d3.request(url)
     .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
     .mimeType("application/json")
@@ -30,22 +30,42 @@ d3.request(url)
     .get(callback);
 
 function callback(json){
-// Feel free to change or delete any of the code you see in this editor!
-    var svg = d3.select("body").append("svg")
-      .attr("width", 960)
-      .attr("height", 300)
+  var data_0 = json.result["data"][0]["data"];
+  var data_1 = json.result["data"][1]["data"];
+  var data_2 = json.result["data"][2]["data"];
+  var data_3 = json.result["data"][3]["data"];
+  var a = [], b = [], c = [], d = [];
+  var data = {};
 
-    var margin = {left:30, right:30, top: 10, bottom: 20}
-    var width = svg.attr("width") - margin.left - margin.right;
-    var height = svg.attr("height") - margin.bottom - margin.top;
-    
-    // TODO: nest data with d3.nest
-    var data = [];
-data[0] = json.result["data"][0]["data"];
-data[1] = json.result["data"][1]["data"];
-data[2] = json.result["data"][2]["data"];
-data[3] = json.result["data"][3]["data"];
-    
+  
+data.forEach(function(data_0) {
+  data.year = data_0[i].year
+})
+
+console.log(data);
+ /* for (var i = 0; i < data_0.length; i++) {
+    y = data_0[i].year;
+    data["date"] = y;
+    a = data_0[i].value;
+    data["a"] = a;
+    b = data_1[i].value;
+    data["b"] = b;
+    c = data_2[i].value;
+    data["c"] = c;
+    d = data_3[i].value;
+    data["d"] = d;
+console.log(data)
+  };*/
+
+
+var svg = d3.select("body").append("svg")
+    .attr("width", 960)
+    .attr("height", 300)
+
+var margin = { left:30, right:30, top:10, bottom:20 }
+var width = svg.attr("width") - margin.left - margin.right; 
+var height = svg.attr("height") - margin.bottom - margin.top; 
+
     var x = d3.scaleTime()
       .rangeRound([0, width]);
     var x_axis = d3.axisBottom(x);
@@ -53,16 +73,56 @@ data[3] = json.result["data"][3]["data"];
     var y = d3.scaleLinear()
       .rangeRound([height, 0]);
     var y_axis = d3.axisBottom(y);
-
     
+    var parseTime = d3.timeParse("%Y");
+    
+    x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
+    y.domain([0, 
+              d3.max(data, function(d) { 
+                return d3.max([d.a, d.b, d.c, d.d]);
+              })]);
+
+    var a = function(d) {return d.a};
+    
+    var multiline = function(category) {
+      var line = d3.line()
+                  .x(function(d) { return x(parseTime(d.date)); })
+                  .y(function(d) { return y(d[category]); });
+      return line;
+    }
+    
+    var line = d3.line()
+      .x(function(d) { return x(parseTime(d.date)); })
+      .y(function(d) { return y(d); }); 
+
+    var categories = ['a', 'b', 'c', 'd'];
+    //var color = d3.scale.category10();  // escala com 10 cores (category10)
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
+    
+    var g = svg.append("g")
+        .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+    
+    for (i in categories) {
+      var lineFunction = multiline(categories[i]);
+      g.append("path")
+        .datum(data) 
+        .attr("class", "line")
+        .style("stroke", color(i))
+        .attr("d", lineFunction);
+    }
+    
+      // Add the X Axis
+      g.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+    
+      // Add the Y Axis
+      g.append("g")
+      .call(d3.axisLeft(y));
 }
-
-
-
-
-
-
-
 
   </script>
 </body>
+
+
