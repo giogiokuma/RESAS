@@ -1,61 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8" />
-<meta http-equiv="content-language" content="ja">
-<title>Leaflet QuickStart 1</title>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.min.js"></script>    
-<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet-src.js"></script><style>
-html, body  {
-  width: 100%;
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-}
-#map {
-  width: 100%;
-  height: 100%;
-}
-</style>
-</head>
+<meta charset='utf-8'>
+<script src='http://d3js.org/d3.v3.min.js'></script>
+<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+<script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
 <body>
-<div id="map"></div>
+<div style='width:960px;height:500px'></div>
 <script>
-var url = "https://opendata.resas-portal.go.jp/api/v1/tourism/attractions?prefCode=10&cityCode=-";
-d3.request(url)
-    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
-    .mimeType("application/json")
-    .response(function(xhr) { return JSON.parse(xhr.responseText) })
-    .get(callback);
+var map = new L.Map(d3.select('div').node()).setView([35.678707, 139.739143], 12);
+var tile = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
-function callback(json){
-  //console.log(json);
-console.log(json)
-data = json.result["data"];
-
-
-
-};
-
-
-var map = L.map('map').setView([36.3219088　, 139.0032936], 16);
-
-var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-
-L.tileLayer(
-  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  {
-    attribution: 'Map data &copy; ' + mapLink,
-    maxZoom: 18
-  }
-).addTo(map);
-
-//マーカー＆ポップアップ追加
-var marker = L.marker([36.3219088　, 139.0032936])
-  .bindPopup("<h1>Hello! Leaflet!</h1>")
-  .addTo(map);
 
 </script>
-</body>
-</html>

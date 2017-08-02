@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<head>
+<title>人口構成</title>
+<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: "Noto Sans Japanese"; 
+  font-weight: 100;
+}
+.bar { fill:#529098 }
+</style>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+<body>
+<h3>群馬県 総人口推移</h3>
+<script>
+
+var url = "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=10"
+d3.request(url)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback);
+
+function callback(json){
+console.log(json)
+data_0 = json.result["data"][0]["data"];
+data_1 = json.result["data"][1]["data"];
+data_2 = json.result["data"][2]["data"];
+data_3 = json.result["data"][3]["data"];
+
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 30, left: 100},
+    width = 630 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleBand()
+          .range([0, width])
+          .padding(0.1);
+var y = d3.scaleLinear()
+          .range([height, 0]);
+
+// append the svg object to the body of the page
+// append a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+
+data_0.forEach(function(d) {
+  d.year = parseInt(d.year);
+  d.value = +parseInt(d.value);
+});
+
+x.domain(data_0.map(function(d) { return d.year }));
+y.domain([0, d3.max(data_0, function(d) { return d.value; })]);
+
+svg.selectAll(".bar")
+  .data(data_0)
+  .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return x(d.year); })
+    .attr("width", x.bandwidth())
+    .attr("y", function(d) { return y(d.value); })
+    .attr("height", function(d) { return height - y(d.value); });
+
+svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+svg.append("g")
+    .call(d3.axisLeft(y));
+
+
+
+
+
+
+
+
+
+
+
+
+
+} 
+
+</script>
