@@ -26,9 +26,9 @@ div.txt1 {
 </head>
 
 <body>
-<h3>群馬県 総人口推移</h3>
+<h3>群馬県 創業比率</h3>
 <div class="txt1">
-<span>x > 年</span><br>
+<span>x > 年</span><br
 <span>y > 創業比率（パーセント）</span>
 </div>
   <script>
@@ -42,12 +42,12 @@ d3.request(url)
 function callback(json){
     
 data = json.result["data"];
-console.log(data)
+
 
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 20, right: 20, bottom: 30, left: 100},
+    width = 630 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
 // parse the date / time
 //var parseTime = d3.timeParse("%y");

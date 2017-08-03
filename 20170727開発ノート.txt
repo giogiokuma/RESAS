@@ -10,7 +10,7 @@ d3.request(url)
 
 v. index025.html > index024.html の 群馬県　創業数　を 改良　XAxis のString がうまく入らない　＞　できそう
   
-  
+注）複数のラインチャートの基本は > index024_2.html をもとに作ればできる
 ---------------------------------
 
 20170801
@@ -36,6 +36,9 @@ s. index031_test.html > 外部ファイルの csv.data5.csv から　グルー�
 
 t. index032.html > バーチャートの上に値を書く
 
+u. index033.html > RESAS > 指定地域への国籍別訪問者数
+
+v. index034.html > RESAS > 有効求人倍率
 例外
 ** 清水さん d3.js Axis を可変させる**
 https://shimz.me/blog/d3v4/5144

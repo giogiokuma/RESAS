@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<meta charset='utf-8'>
-<head>
-<title>人口構成</title>
-<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+<meta charset="utf-8">
 <style>
 h3{
   padding-left:100px;
@@ -10,17 +7,22 @@ h3{
   font-family: "Noto Sans Japanese"; 
   font-weight: 100;
 }
-.bar { fill:#529098 }
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+
 </style>
+<body>
+<h3>群馬県 有効求人倍率 専門的・技術的職業</h3>
 <script src="https://d3js.org/d3-request.v1.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-
-</head>
-<body>
-<h3>群馬県 総人口推移</h3>
 <script>
-
-var url = "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=10"
+var url = "https://opendata.resas-portal.go.jp/api/v1/municipality/job/perYear?prefCode=10&iscoCode=B"
 d3.request(url)
     .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
     .mimeType("application/json")
@@ -28,14 +30,9 @@ d3.request(url)
     .get(callback);
 
 function callback(json){
-console.log(json)
-data_0 = json.result["data"][0]["data"];
-data_1 = json.result["data"][1]["data"];
-data_2 = json.result["data"][2]["data"];
-data_3 = json.result["data"][3]["data"];
 
+data = json.result["data"];
 
-// set the dimensions and margins of the graph
 var margin = {top: 20, right: 20, bottom: 30, left: 100},
     width = 630 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
@@ -57,16 +54,16 @@ var svg = d3.select("body").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
-data_0.forEach(function(d) {
+data.forEach(function(d) {
   d.year = parseInt(d.year);
   d.value = +parseInt(d.value);
 });
 
-x.domain(data_0.map(function(d) { return d.year }));
-y.domain([0, d3.max(data_0, function(d) { return d.value; })]);
+x.domain(data.map(function(d) { return d.year }));
+y.domain([0, d3.max(data, function(d) { return d.value; })]);
 
 svg.selectAll(".bar")
-  .data(data_0)
+  .data(data)
   .enter().append("rect")
     .attr("class", "bar")
     .attr("x", function(d) { return x(d.year); })
@@ -84,13 +81,10 @@ svg.append("g")
 
 
 
+}
 
-
-
-
-
-
-
-} 
 
 </script>
+
+</body>
+</html>
