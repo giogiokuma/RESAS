@@ -1,4 +1,18 @@
-<<<<<<< HEAD
+20170803
+
+u. index24.html > 群馬県　創業数
+https://opendata.resas-portal.go.jp/api/v1/municipality/foundation/perYear?cityCode=-&prefCode=10
+d3.request(url)
+  .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+  .mimeType("application/json")
+  .response(function(xhr) { return JSON.parse(xhr.responseText) })
+  .get(callback);
+
+v. index025.html > index024.html の 群馬県　創業数　を 改良　XAxis のString がうまく入らない　＞　できそう
+  
+  
+---------------------------------
+
 20170801
 leaflet.js + d3js
 https://shimz.me/blog/d3-js/3517
@@ -6,19 +20,47 @@ https://shimz.me/blog/d3-js/3517
 基本的な使い方
 https://shimz.me/blog/leaflet-js/4142
 
-l. index026.html > leaflet.js + マーカーを足す
-
-m. index027.html > d3.js + leaflet.js  両方
-
-n. index028.html > 特産品 ★★★
-
-o.
-
-
-
 
 -----------
-=======
+
+20170801
+o. index028.html >  特産品　マーカーでマップ
+
+p. index029.html > 外部ファイルの JSON/data3.json  から　bar chart を表示
+
+q. index030.html > RESAS > 群馬県 総人口推移
+
+r. index031.html > RESAS > グループバーチャート > だめ
+
+s. index031_test.html > 外部ファイルの csv.data5.csv から　グループ　bar chart　を表示
+
+t. index032.html > バーチャートの上に値を書く
+
+例外
+** 清水さん d3.js Axis を可変させる**
+https://shimz.me/blog/d3v4/5144
+
+
+---------------------------------
+
+20170801
+**leaflet チュートリアル**
+http://leafletjs.com/examples.html
+
+**mapbox アクセストークン**
+https://www.mapbox.com/signup/?route-to=https://www.mapbox.com/studio/account/tokens/
+
+**ストリートマップ** (グレー)になる
+https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2lvZ2lva3VtYSIsImEiOiJjaWhxOXU3angwNGdidDVtMnVmdWF2bG1jIn0.NfCaOj0x0pqDTZM9tEk6wQ
+
+**MapBoxで自作スタイル**
+http://tech.sanwasystem.com/entry/2015/09/30/210926
+
+
+
+---------------------------------
+
+>>>>>>> 493c9da7fa81061387ba740f5c073674be2db525
 20170731
 leaflet.js を使おう
 
@@ -49,7 +91,6 @@ m. index027.html > ★★★ leaflet.js 基本
 var marker = L.marker([36.3219088　, 139.0032936])
 	.addTo(map);
 
-o.
 
 
 ---------------------------------

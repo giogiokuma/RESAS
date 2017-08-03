@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD:test001.html
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
@@ -65,3 +66,19 @@ var marker = L.marker([json.result["data"][0].lat, json.result["data"][0].lng])
 </script>
 </body>
 </html>
+=======
+<meta charset='utf-8'>
+<script src='http://d3js.org/d3.v3.min.js'></script>
+<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+<script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+<body>
+<div style='width:960px;height:500px'></div>
+<script>
+var map = new L.Map(d3.select('div').node()).setView([35.678707, 139.739143], 12);
+var tile = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+</script>
+>>>>>>> 493c9da7fa81061387ba740f5c073674be2db525:index027.html
