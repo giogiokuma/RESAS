@@ -1,8 +1,31 @@
-人生でやりたいこと100
-http://kishikorofreee.com/entry/2016/01/19/20160119121212
+20170805
+DECK.GL カタログ
+https://uber.github.io/deck.gl/#/documentation/layer-catalog/arc-layer
+-------
 
 20170804
 **ラインチャートのメモリ色を変更**
+s. index037.html > 複数ラインチャート
+
+JSON データを取得
+http://qiita.com/Takeshi-Uchida/items/0891695be92084f3963f
+
+**d3.scaleTime() **
+http://qiita.com/huigo/items/9182374f4a91f8f78f16
+// x軸を　期間の幅にあわせていいかんじに表示
+
+t. index37_4.html > 
+日付処理　moment.js 
+
+
+u. index37_2.html > 左右に違うメモリを配置した　複数ラインチャート
+
+v. index37_3.html > Json  データを直接書いて　読み込む　複数ラインチャート
+
+
+w. index034_2.html > 職業大分類　
+
+x. index034_2_A~L.html > 職業中分類
 
 
 -------------

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: "Noto Sans Japanese"; 
+  font-weight: 100;
+}
+  .axis--x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+</style>
+</head>
+<body>
+  
+<h3>群馬県 総人口推移</h3>
+
+<svg width="600" height="300"></svg>
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script>
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 80, bottom: 30, left: 100},
+    width = svg.attr("width") - margin.left - margin.right,
+    height = svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var parseTime = d3.timeParse("%Y");
+
+var x = d3.scaleTime().range([0, width]),
+    y = d3.scaleLinear().range([height, 0]),
+    z = d3.scaleOrdinal(d3.schemeCategory10);
+
+var line = d3.line()
+    .curve(d3.curveBasis)
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.temperature); });
+
+
+var data = [
+{date:"1960","総人口":"1578476", "年少人口":"500151", "生産年齢人口": "981555",  "老年人口": "96770" },
+{date:"1965","総人口":"1605584", "年少人口":"423874", "生産年齢人口": "1071433", "老年人口": "110277" },
+{date:"1970","総人口":"1658909", "年少人口":"397032", "生産年齢人口": "1131078", "老年人口": "130799" },
+{date:"1975","総人口":"1756480", "年少人口":"427621", "生産年齢人口": "1174392", "老年人口": "154371" },
+{date:"1980","総人口":"1848562", "年少人口":"441548", "生産年齢人口": "1222826", "老年人口": "184115" },
+{date:"1985","総人口":"1921259", "年少人口":"424829", "生産年齢人口": "1281535", "老年人口": "214871" },
+{date:"1990","総人口":"1966265", "年少人口":"368080", "生産年齢人口": "1340557", "老年人口": "256367" },
+{date:"1995","総人口":"2003540", "年少人口":"329960", "生産年齢人口": "1360039", "老年人口": "313425" },
+{date:"2000","総人口":"2024852", "年少人口":"306895", "生産年齢人口": "1346441", "老年人口": "367117" },
+{date:"2005","総人口":"2024135", "年少人口":"291995", "生産年齢人口": "1314259", "老年人口": "416909" },
+{date:"2010","総人口":"2008068", "年少人口":"275225", "生産年齢人口": "1251608", "老年人口": "470520" },
+{date:"2015","総人口":"1971225", "年少人口":"254094", "生産年齢人口": "1173658", "老年人口": "543473" },
+{date:"2020","総人口":"1920494", "年少人口":"229720", "生産年齢人口": "1112823", "老年人口": "577951" },
+{date:"2025","総人口":"1857908", "年少人口":"208240", "生産年齢人口": "1067982", "老年人口": "581686" },
+{date:"2030","総人口":"1787483", "年少人口":"189014", "生産年齢人口": "1018618", "老年人口": "579851" },
+{date:"2035","総人口":"1710958", "年少人口":"177245", "生産年齢人口": "951102", "老年人口": "582611" },
+{date:"2040","総人口":"1629974", "年少人口":"169341", "生産年齢人口": "864193", "老年人口": "596440" }
+];
+
+data.forEach(function(d){
+ d.date = parseTime(d.date);
+});
+
+data.columns = ["date", "総人口", "年少人口", "生産年齢人口", "老年人口"];
+
+  var cities = data.columns.slice(1).map(function(id) {
+    return {
+      id: id,
+      values: data.map(function(d) {
+      return {date: d.date, temperature: d[id]};
+      })
+    };
+  });
+  
+  console.log(cities);
+
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+
+  y.domain([0, 2000000
+  //  d3.min(cities, function(c) { return d3.min(c.values, function(d) { return d.temperature; }); }),
+   // d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.temperature; }); })
+  ]);
+
+  z.domain(cities.map(function(c) { return c.id; }));
+
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("fill", "#000")
+ //     .text("Temperature, ºF");
+
+  var city = g.selectAll(".city")
+    .data(cities)
+    .enter().append("g")
+      .attr("class", "city");
+
+  city.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .style("stroke", function(d) { return z(d.id); });
+
+  city.append("text")
+      .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
+      .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
+      .attr("x", 4)
+      .attr("dy", "0.35em")
+      .style("font", "10px sans-serif")
+      .text(function(d) { return d.id; });
+//});
+
+function type(d, _, columns) {
+  d.date = parseTime(d.date);
+  for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
+  return d;
+}
+</script>
+</body>
+</html>

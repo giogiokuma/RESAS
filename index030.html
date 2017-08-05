@@ -28,13 +28,13 @@ d3.request(url)
     .get(callback);
 
 function callback(json){
-console.log(json)
+
 data_0 = json.result["data"][0]["data"];
 data_1 = json.result["data"][1]["data"];
 data_2 = json.result["data"][2]["data"];
 data_3 = json.result["data"][3]["data"];
-
-
+data = json.result["data"]
+console.log(data)
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: 20, bottom: 30, left: 100},
     width = 630 - margin.left - margin.right,

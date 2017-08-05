@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<style>
+  .axis--x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+</style>
+</head>
+<body>
+<div id="chart"></div>
+
+<svg width="960" height="500"></svg>
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/ja.js"></script>
+<script>
+
+var width = height = 300,padding = 10;
+var startDate = new Date(2016,10,29);
+var endDate = new Date(2016,11,10);
+//moment.locale('ja');
+
+var chartSvg = d3.select("#chart")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+chartSvg.append("g")
+    .attr("class", "y-axis")
+    .attr("transform", "translate(100,0)");
+
+var yScale = d3.scaleTime()
+                .range([padding, height - padding])
+                .domain([startDate,endDate]);
+                
+function draw() {
+
+   var ticks = yScale.ticks(10);//default値が10であるから
+   var tickDiff = moment(ticks[1]).diff(ticks[0]);
+   var isDayInterval = (86400000 === tickDiff || 86400000 * 2  === tickDiff || 86400000 * 3  === tickDiff);
+   
+   var yAxis = d3.axisLeft(yScale)
+      .tickFormat(function(date){
+          var m = moment(date);
+          if (d3.timeDay(date) < date){
+            if (date.getHours() === 0){
+              return m.format('D (ddd)');
+            } else {
+              return m.format('A hh');
+            }           
+          } else if (d3.timeMonth(date) < date){
+            if (d3.timeWeek(date) < date || isDayInterval){
+              return m.format('D (ddd)');
+            } else {
+              return m.format('M月D日');
+            }
+          } else if (d3.timeYear(date) < date){
+            if (isDayInterval){
+              return m.format('M/D (ddd)');            
+            } else {
+              return m.format('M月');
+            }
+          } else {
+            return m.format('YYYY');
+          }
+      });
+   
+   chartSvg.selectAll(".y-axis")
+           .call(yAxis);
+}
+
+draw();
+
+
+</script>
+  
+</body>
+</html>

@@ -54,6 +54,7 @@ d3.csv("csv/homicides.csv", type, function(error, data) {
 
   var bins = histogram(data);
 
+
   y.domain([0, d3.max(bins, function(d) { return d.length; })]);
 
   var bar = svg.selectAll(".bar")
