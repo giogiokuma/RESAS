@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <meta charset='utf-8'>
-<script src='http://d3js.org/d3.v3.min.js'></script>
-<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
-<script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
-<body>
-<div style='width:960px;height:500px'></div>
-<script>
-var map = new L.Map(d3.select('div').node()).setView([35.678707, 139.739143], 12);
-var tile = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+<head>
+<title>人口構成</title>
+<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: "Noto Sans Japanese"; 
+  font-weight: 100;
+}
+.bar { fill:#529098 }
+</style>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
+</head>
+<body>
+<h3>群馬県 総人口推移</h3>
+<script>
+
+var url = "https://opendata.resas-portal.go.jp/api/v1/townPlanning/estateTransaction/bar?year=2015&prefCode=10&cityCode=-&displayType=1"
+d3.request(url)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback);
+
+function callback(json){
+
+console.log(json);
+
+
+
+
+
+} 
 
 </script>

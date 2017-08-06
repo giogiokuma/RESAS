@@ -1,3 +1,14 @@
+20170806
+w. index034_2.html > 職業大分類　項目
+
+x. index034_2_A~L.html > 職業中分類　項目
+
+
+y. index038.html > 群馬県　市町村一覧
+　
+z. index038_2_A.html > 
+-------
+
 20170805
 DECK.GL カタログ
 https://uber.github.io/deck.gl/#/documentation/layer-catalog/arc-layer
@@ -23,9 +34,6 @@ u. index37_2.html > 左右に違うメモリを配置した　複数ラインチ
 v. index37_3.html > Json  データを直接書いて　読み込む　複数ラインチャート
 
 
-w. index034_2.html > 職業大分類　
-
-x. index034_2_A~L.html > 職業中分類
 
 
 -------------
