@@ -1,3 +1,11 @@
+20170808
+人口 JSONファイル
+前橋市　> 1980 > "data6.json"
+★　　男性と女性の割合を pieチャートで表示した方がわかりやすい
+b. index040.html > 
+**シンプルpieチャート**
+https://bl.ocks.org/santi698/f3685ca8a1a7f5be1967f39f367437c0
+---------------
 ##d3js##
 **ドキュメント書類**
 http://devdocs.io/d3~4/
@@ -14,6 +22,8 @@ http://www.verisi.com/resources/d3-tutorial-basic-charts.htm
 
 **ティップス**
 https://leanpub.com/D3-Tips-and-Tricks/read#leanpub-auto-stack-overflow
+
+
 
 ------------------
 20170808

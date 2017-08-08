@@ -27,7 +27,7 @@ div {
 </style>
 <body>
 <h3>群馬県　市町村一覧</h3>
-<div class="app"></div>
+
 <script src="https://d3js.org/d3-request.v1.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
@@ -42,10 +42,12 @@ d3.request(url)
     .get(callback);
 
 function callback(json) {
-  console.log(json); 
+  data_0 = json.result["yearRight"].data;
+  console.log(data_0); 
+
   
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
+var margin = {top: 20, right: 20, bottom: 30, left: 100},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -56,6 +58,38 @@ var x = d3.scaleBand()
 var y = d3.scaleLinear()
           .range([height, 0]);
           
+
+var svg = d3.select("body").append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", 
+        "translate(" + margin.left + "," + margin.top + ")"); 
+
+data_0.forEach(function(d) {
+  d.class = String(d.class);
+  d.man = +parseInt(d.man);
+});
+
+x.domain(data_0.map(function(d) { return d.class }));
+y.domain([0, d3.max(data_0, function(d) { return d.man })]);
+
+svg.selectAll(".bar")
+  .data(data_0)
+  .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return x(d.year); })
+    .attr("width", x.bandwidth())
+    .attr("y", function(d) { return y(d.man); })
+    .attr("height", function(d) { return height - y(d.man); });
+
+
+svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+svg.append("g")
+    .call(d3.axisLeft(y));
 
 }
 
