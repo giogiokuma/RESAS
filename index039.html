@@ -26,7 +26,7 @@ div {
 
 </style>
 <body>
-<h3>群馬県　市町村一覧</h3>
+<h3>群馬県 前橋市 1980年　年齢別人口</h3>
 
 <script src="https://d3js.org/d3-request.v1.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -43,7 +43,7 @@ d3.request(url)
 
 function callback(json) {
   data_0 = json.result["yearRight"].data;
-  console.log(data_0); 
+  //console.log(data_0); 
 
   
 // set the dimensions and margins of the graph
@@ -65,23 +65,24 @@ var svg = d3.select("body").append("svg")
   .append("g")
   .attr("transform", 
         "translate(" + margin.left + "," + margin.top + ")"); 
-
+var data = {};
 data_0.forEach(function(d) {
   d.class = String(d.class);
-  d.man = +parseInt(d.man);
+  data[d.manPercent] = +parseFloat(d.manPercent);
 });
+//console.log(Object.values(data));
 
 x.domain(data_0.map(function(d) { return d.class }));
-y.domain([0, d3.max(data_0, function(d) { return d.man })]);
+y.domain([0, d3.max(data_0, function(d) { return d.manPercent })]);
 
 svg.selectAll(".bar")
   .data(data_0)
   .enter().append("rect")
     .attr("class", "bar")
-    .attr("x", function(d) { return x(d.year); })
+    .attr("x", function(d) { return x(d.class); })
     .attr("width", x.bandwidth())
-    .attr("y", function(d) { return y(d.man); })
-    .attr("height", function(d) { return height - y(d.man); });
+    .attr("y", function(d) { return y(d.manPercent); })
+    .attr("height", function(d) { return height - y(d.manPercent); });
 
 
 svg.append("g")
@@ -92,12 +93,6 @@ svg.append("g")
     .call(d3.axisLeft(y));
 
 }
-
-
-
-
-
-
 
 
 </script>
