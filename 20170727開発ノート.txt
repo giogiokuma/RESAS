@@ -21,7 +21,7 @@ https://leanpub.com/D3-Tips-and-Tricks/read#leanpub-auto-stack-overflow
 前橋市　> 1980 > "data6.json"
 
 a. index39.html > "json" ファイルから　バーチャート作成　1データ　シンプル
-b. index40.html > "json" ファイルから 複数バーチャート作成　ver.4 
+★
 
 リソース
 外部"json" ファイルから 複数バーチャート作成　ver.4 
