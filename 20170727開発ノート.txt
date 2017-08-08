@@ -1,3 +1,38 @@
+##d3js##
+**ドキュメント書類**
+http://devdocs.io/d3~4/
+
+
+**GitHub**
+https://github.com/d3/d3/wiki/Gallery
+
+**ギャラリー**
+https://bl.ocks.org/
+
+**d3js v4  コード例**
+http://www.verisi.com/resources/d3-tutorial-basic-charts.htm
+
+**ティップス**
+https://leanpub.com/D3-Tips-and-Tricks/read#leanpub-auto-stack-overflow
+
+------------------
+20170808
+人口 JSONファイル
+前橋市　> 1980 > "data6.json"
+
+a. index39.html > "json" ファイルから　バーチャート作成　1データ　シンプル
+b. index40.html > "json" ファイルから 複数バーチャート作成　ver.4 
+
+リソース
+外部"json" ファイルから 複数バーチャート作成　ver.4 
+https://bl.ocks.org/mbostock/3887051
+
+jsonデータから　積み上げバーチャート作成 ver.4
+https://stackoverflow.com/questions/31981299/d3-stacked-chart-with-array-or-json-data
+
+2000を超える　例題
+http://techslides.com/over-2000-d3-js-examples-and-demos
+---------------------
 20170806
 w. index034_2.html > 職業大分類　項目
 

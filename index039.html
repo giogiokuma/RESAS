@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  padding-left:50px;
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+
+</style>
+<body>
+<h3>群馬県　市町村一覧</h3>
+<div class="app"></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+d3.json("JSON/ordernumbertracks.json", function(error, data) {
+  var ageNames = d3.keys(data.ordernumbertrack[0]).filter(function(key) { return key !== "state";
+});
+
+data.ordernumbertrack.forEach(function(d) {
+  d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+});
+
+x0.domain(data.ordernumbertrack.map(function(d) { return d.state; }));
+x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+y.domain([0, d3.max(data.ordernumbertrack, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+
+svg.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis);
+
+svg.append("g")
+  .attr("class", "y axis")
+  .call(yAxis)
+.append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", 6)
+  .attr("dy", ".71em")
+  .style("text-anchor", "end")
+  .text("");
+
+var state = svg.selectAll(".state")
+  .data(data.ordernumbertrack)
+.enter().append("g")
+  .attr("class", "g")
+  .attr("transform", function(d) { return "translate(" + x0(d.state) + ",0)"; });
+
+</script>
+
+</body>
+</html>
