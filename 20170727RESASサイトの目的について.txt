@@ -1,0 +1,50 @@
+##RESAS データビジュアライゼーション##
+**Gunma Pref. 1st Edition**
+Purpose 
+**Continuous Integration (CI)**
+	gaps require future search work for improve capturing "Method" service approaches data extracted from RESAS
+
+	application shows >  アプローチ(approaches)　-  プラクティス（practices）　-  チャレンジ（challanes）
+	ニーズ(needs)      >  過去（past） - 	現在（present） - 未来（future）
+	
+
+**Continuous Delivery (CD)**
+
+試合結果　（もしくはそれに代わる結果）
+スケジュール
+地図や会場の情報
+
+##Continuous Integration for Data Science##
+http://engineering.pivotal.io/post/continuous-integration-for-data-science/
+カテゴリー Data Science, Machine Learning, Smart Apps, Continuous Integration 
+
+
+---------------
+**Test-Driven Development for Data Science**
+http://engineering.pivotal.io/post/test-driven-development-for-data-science/
+matplotlib inlin  		python -> jupyter     matplotlib ライブラリで　グラフが描ける
+
+
+---------------
+**Data visualization **
+データプレゼンテーション　pictorial graphical format => decision makers to see  analytics presented visually 
+---------------
+Resas data is open source data from government, that data shows continues integration past, present, future 
+グラフィクスでデータを表示することで、データ分析を目で見ることができる
+データを使ってより良いサービスを実現する　未来への可能性にアプローチする
+
+
+https://www.sas.com/en_us/insights/big-data/data-visualization.html
+**具体的に**
+地区に限定した範囲を設定したデータをつくる
+事実を把握してサービスをつくる
+サービスプロダクトを理解するため
+データ分析から予想サービス
+
+
+What is RESAS? 
+
+
+**Advantage of the data science**
+
+---------------
