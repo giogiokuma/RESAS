@@ -44,7 +44,7 @@ d3.request(url)
 
 function callback(json) {
   var data_0 = json.result["yearRight"].data;
-    console.log(data_0);
+    console.log(json);
   var data = [], app1 = {};
   data_0.forEach(function(d) {
     data[d.manPercent] = +parseFloat(d.manPercent);

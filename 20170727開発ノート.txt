@@ -1,4 +1,16 @@
 
+---------------  
+20170810 
+群馬県 カテゴリー別人口推移（1960-2040）
+c. index040_A.html   json8.json  1980  カテゴリー別データ
+
+
+**ページに２つのチャートを描く**
+https://stackoverflow.com/questions/41940439/display-multiple-d3-js-charts-in-a-single-html-page
+
+
+---------------   
+    
 20170808
 人口 JSONファイル
 前橋市　> 1980 > "data6.json"

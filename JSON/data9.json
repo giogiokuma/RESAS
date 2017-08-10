@@ -1,0 +1,135 @@
+[
+  {
+    "class": "0～4歳",
+    "man": 30246,
+    "manPercent": 1.69,
+    "woman": 28697,
+    "womanPercent": 1.61
+  },
+  {
+    "class": "5～9歳",
+    "man": 31718,
+    "manPercent": 1.77,
+    "woman": 30094,
+    "womanPercent": 1.68
+  },
+  {
+    "class": "10～14歳",
+    "man": 35029,
+    "manPercent": 1.96,
+    "woman": 33230,
+    "womanPercent": 1.86
+  },
+  {
+    "class": "15～19歳",
+    "man": 39071,
+    "manPercent": 2.19,
+    "woman": 37085,
+    "womanPercent": 2.07
+  },
+  {
+    "class": "20～24歳",
+    "man": 40423,
+    "manPercent": 2.26,
+    "woman": 38084,
+    "womanPercent": 2.13
+  },
+  {
+    "class": "25～29歳",
+    "man": 46581,
+    "manPercent": 2.61,
+    "woman": 43266,
+    "womanPercent": 2.42
+  },
+  {
+    "class": "30～34歳",
+    "man": 49359,
+    "manPercent": 2.76,
+    "woman": 45804,
+    "womanPercent": 2.56
+  },
+  {
+    "class": "35～39歳",
+    "man": 48372,
+    "manPercent": 2.71,
+    "woman": 44223,
+    "womanPercent": 2.47
+  },
+  {
+    "class": "40～44歳",
+    "man": 48071,
+    "manPercent": 2.69,
+    "woman": 44219,
+    "womanPercent": 2.47
+  },
+  {
+    "class": "45～49歳",
+    "man": 53478,
+    "manPercent": 2.99,
+    "woman": 49631,
+    "womanPercent": 2.78
+  },
+  {
+    "class": "50～54歳",
+    "man": 62469,
+    "manPercent": 3.49,
+    "woman": 59255,
+    "womanPercent": 3.31
+  },
+  {
+    "class": "55～59歳",
+    "man": 72805,
+    "manPercent": 4.07,
+    "woman": 70756,
+    "womanPercent": 3.96
+  },
+  {
+    "class": "60～64歳",
+    "man": 62977,
+    "manPercent": 3.52,
+    "woman": 62689,
+    "womanPercent": 3.51
+  },
+  {
+    "class": "65～69歳",
+    "man": 54858,
+    "manPercent": 3.07,
+    "woman": 57031,
+    "womanPercent": 3.19
+  },
+  {
+    "class": "70～74歳",
+    "man": 50574,
+    "manPercent": 2.83,
+    "woman": 54909,
+    "womanPercent": 3.07
+  },
+  {
+    "class": "75～79歳",
+    "man": 52846,
+    "manPercent": 2.96,
+    "woman": 62491,
+    "womanPercent": 3.5
+  },
+  {
+    "class": "80～84歳",
+    "man": 50588,
+    "manPercent": 2.83,
+    "woman": 66243,
+    "womanPercent": 3.71
+  },
+  {
+    "class": "85～89歳",
+    "man": 27763,
+    "manPercent": 1.55,
+    "woman": 44134,
+    "womanPercent": 2.47
+  },
+  {
+    "class": "90歳～",
+    "man": 17095,
+    "manPercent": 0.96,
+    "woman": 41319,
+    "womanPercent": 2.31
+  }
+]

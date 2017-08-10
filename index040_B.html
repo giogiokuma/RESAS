@@ -27,13 +27,13 @@ div {
 </style>
 <body>
 <h3> 群馬県 前橋市　1980年　人口ピラミッド</h3>
-
+<svg width="960" height="500" id="svg1"></svg>
 <script src="https://d3js.org/d3-request.v1.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 <script>
 
-var url = "https://opendata.resas-portal.go.jp/api/v1/population/composition/pyramid?cityCode=10201&yearRight=1980&prefCode=10&yearLeft=2030"
+var url = "https://opendata.resas-portal.go.jp/api/v1/population/composition/pyramid?cityCode=-&yearRight=1980&prefCode=10&yearLeft=2030"
 
 d3.request(url) 
   .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
@@ -43,13 +43,27 @@ d3.request(url)
 
 function callback(json) {
   data_0 = json.result["yearRight"].data;
-  console.log(data_0); 
+  data_1 = json.result["yearLeft"].data;
 
-  
-// set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 100},
-    width = 900 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+
+var margin = {top: 20, right:20, bottom:30, left:100},
+width = 900 - margin.left - margin.right,
+height = 500 - margin.top - margin.bottom; 
+
+/*
+var x0 = d3.scaleBand()
+    .rangeRound([0, width])
+    .paddingInner(0.1); 
+
+var x1 = d3.scaleBand()
+    .padding(0.05); 
+
+var y = d3.scaleLinear()
+    .rangeRound([height, 0]); 
+
+var z = d3.scaleOriginal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+*/
 
 // set the ranges
 var x = d3.scaleBand()
@@ -58,24 +72,38 @@ var x = d3.scaleBand()
 var y = d3.scaleLinear()
           .range([height, 0]);
           
+var svg = d3.select("#svg1"),
+    margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var svg = d3.select("body").append("svg")
+
+
+
+/*var svg = d3.select("body").append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", 
-        "translate(" + margin.left + "," + margin.top + ")"); 
+        "translate(" + margin.left + "," + margin.top + ")"); */
 var data = {};
-data_0.forEach(function(d) {
+data_0.forEach(function(d, i, columns) {
+  for (var i = 1, n = columns.length; i < n; ++i) {
+    
+  };
   d.class = String(d.class);
   data[d.manPercent] = +parseFloat(d.manPercent);
+
 });
+console.log(data);
 //console.log(Object.values(data));
 
 x.domain(data_0.map(function(d) { return d.class }));
 y.domain([0, d3.max(data_0, function(d) { return d.manPercent })]);
 
-svg.selectAll(".bar")
+g.append("g")
+  .selectAll("g")
   .data(data_0)
   .enter().append("rect")
     .attr("class", "bar")
@@ -85,12 +113,13 @@ svg.selectAll(".bar")
     .attr("height", function(d) { return height - y(d.manPercent); });
 
 
-svg.append("g")
+g.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
-svg.append("g")
+g.append("g")
     .call(d3.axisLeft(y));
+
 
 }
 
