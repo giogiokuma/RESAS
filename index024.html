@@ -32,7 +32,7 @@ div.txt1 {
 <span>y > 創業比率（パーセント）</span>
 </div>
   <script>
-var url = "https://opendata.resas-portal.go.jp/api/v1/municipality/foundation/perYear?cityCode=-&prefCode=10"
+var url = "https://opendata.resas-portal.go.jp/api/v1/municipality/foundation/perYear?cityCode=-&prefCode=13"
 d3.request(url)
   .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
   .mimeType("application/json")
@@ -43,7 +43,7 @@ function callback(json){
     
 data = json.result["data"];
 
-
+console.log(data);
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: 20, bottom: 30, left: 100},
     width = 630 - margin.left - margin.right,
