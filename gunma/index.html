@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Airspace A template by Themefisher</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    
+    <!-- Js -->
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/min/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.js"></script>
+
+    <!-- Google Map
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/google-map-init.js"></script>
+   -->
+    <!--Map-->
+    <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+    <script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+
+    <script src="js/main.js"></script>
+<style>
+h4{
+  /*padding-left:100px;*/
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  /*padding-left:50px;*/
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+
+.bar { fill:#529098 }
+</style>
+
+  </head>
+  <body>
+
+
+
+    <!-- Header Start -->
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- header Nav Start -->
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                  Gunma <br>データビジュアライゼーション
+                </a>
+              </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">About us</a></li>
+                    <li><a href="#">RESASとは</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header><!-- header close -->
+        
+    <!-- Slider Start -->
+    <section id="slider">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-2">
+            <div class="block">
+              <h1 class="animated fadeInUp">RESAS <br>データビジュアライゼーション <br> Gunma 1st Edition</h1>
+              <p class="animated fadeInUp">データから見える群馬の過去と今そして未来をもう一度知る </br> 
+                RESAS が公開しているオープンソースを角度を変えてビジュアル表現</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Service Start -->
+    <section id="service">
+      <div class="container">
+        <div class="row">
+          <div class="section-title">
+            <h2>PURPOSE</h2>
+            <p>グラフィクスでデータを表現することで、データ分析を目で見ることができる。データを使ってより良いサービスを実現する。未来へのアプローチ</p>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="icon ion-coffee"></i>
+              <h4>データコード＆分類</h4>
+              <p>市町村名一覧など </p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="ion-compass"></i>
+              <h4><a href="#data0">人口マップ　人口の推移</a></h4>
+              <p>人口構成もしくは男女別人口ピラミッド</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="ion-image"></i>
+              <h4><a href="#data4">観光資源</a></h4>
+              <p>観光資源マップ </p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="ion-bug"></i>
+              <h4>企業活動マップ</h4>
+              <p>企業数<br>産業構造推移<br>農業部門別販売金額 </p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="ion-headphone"></i>
+              <h4>まちづくりマップ</h4>
+              <p>滞在先の居住地別人数<br>居住地の滞在先別人数 </p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="ion-leaf"></i>
+              <h4>雇用／医療・福祉マップ</h4>
+              <p>有効求人倍率</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="ion-planet"></i>
+              <h4>地方財政マップ</h4>
+              <p> </p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="service-item">
+              <i class="ion-earth"></i>
+              <h4>そのほか</h4>
+              <p>And more... </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call to action Start -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+              <h2>We design delightful digital experiences.</h2>
+              <p>Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design.</p>
+              <a class="btn btn-default btn-call-to-action" href="#" >Tell Us Your Story</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content Start -->
+    <!--     <section id="testimonial">
+      <div class="container">
+        <div class="row">
+          <div class="section-title text-center">
+            <h2>Fun Facts About Us</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10">
+            <div class="block">
+              <ul class="counter-box clearfix">
+                <li>
+                  <div class="block">
+                    <i class="ion-ios-chatboxes-outline"></i>
+                    <h4 class="counter">20000</h4>
+                    <span>Cups Of Coffee</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <i class="ion-ios-glasses-outline"></i>
+                    <h4 class="counter">20000</h4>
+                    <span>Cups Of Coffee</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <i class="ion-ios-compose-outline"></i>
+                    <h4 class="counter">20000</h4>
+                    <span>Cups Of Coffee</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <i class="ion-ios-timer-outline"></i>
+                    <h4 class="counter">20000</h4>
+                    <span>Cups Of Coffee</span>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="testimonial-carousel">
+              <div id="testimonial-slider" class="owl-carousel">
+             <div>
+                    <img src="img/cotation.png" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="img/item-img1.jpg" alt="Pepole">
+                      <p><span>Rose Ray</span> CEO-Themefisher</p>
+                    </div>
+                </div>
+              <div>
+                  <img src="img/cotation.png" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="img/item-img1.jpg" alt="Pepole">
+                      <p><span>Rose Ray</span> CEO-Themefisher</p>
+                    </div>
+                </div>
+                <div>
+                  <img src="img/cotation.png" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="img/item-img1.jpg" alt="Pepole">
+                      <p><span>Rose Ray</span> CEO-Themefisher</p>
+                    </div>
+                </div>
+                <div>
+                  <img src="img/cotation.png" alt="IMG">
+                    <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                    <div class="user">
+                      <img src="img/item-img1.jpg" alt="Pepole">
+                      <p><span>Rose Ray</span> CEO-Themefisher</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <section id="testimonial">
+      <div class="container">
+        <div class="row">
+          <div class="section-title text-center">
+            <h2>データコード＆分類</h2>
+            <p>RESAS（地域経済分析システム）のデータで使用する群馬県のコード（prefCode=10）と市区町村コード(cityCode)</p>
+          </div>
+        </div><!--row-->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="block">
+              <ul class="clearfix">
+                <li>
+                    <h4>群馬県　市町村一覧</h4>
+                    <p class="app1"></p>
+                </li>
+            </ul>   
+            </div><!--//block-->            
+          </div>
+          <div class="col-md-4">
+            <div class="block">
+            <p>人口総数 平成29年7月25日 公表</p>
+                    <h1 class="counter">1,959,332</h1><p>平成29年7月1日
+</p> 
+            </div>
+          </div>
+        </div><!--row--><div id="data0"></div>
+<!--data0 群馬県　総人口推移-->
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+          <h3>群馬県　総人口推移</h3>
+          <svg width="730" height="410" id="svg0"></svg>
+        </div><!--row-->
+
+<!--data1 群馬県　人口構成-->
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+          <h3> 群馬県　人口構成</h3>
+          <svg width="730" height="410" id="svg1"></svg>
+        </div><!--row-->
+
+
+<!--data2 群馬県　男女別　人口ピラミッド-->
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+          <h3> 群馬県　1980年　男女別　人口ピラミッド</h3>
+          <svg width="730" height="410" id="svg2"></svg>
+        </div><!--row-->
+
+
+<!--data3 群馬県　男女別　人口ピラミッド-->
+        <div class="row">
+          <div class="col-md-12">
+          <h3> 群馬県　2030年　男女別　人口ピラミッド</h3>
+          <svg width="730" height="410" id="svg3"></svg>
+          </div>
+        </div><!--row-->
+
+<!--data4 群馬県　特産品マップ-->
+        <div class="row">
+          <div class="col-md-12">
+          <h3>群馬県　観光資源マップ</h3>
+          <div style='width:730px;height:600px; font-size:800%' id="data4"></div>
+          </div>
+        </div><!--row-->
+
+        </div>
+      </div>
+    </section>
+
+
+
+    
+    <!-- footer Start -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-manu">
+              <ul style="font-size:300%">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Terms</a></li>
+              </ul>
+            </div>
+            <p>Copyright &copy; Design & Developed</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+            
+            
+
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var url = "https://opendata.resas-portal.go.jp/api/v1/cities?prefCode=10"
+d3.request(url)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback);
+
+function callback(json){
+var data = json.result;
+
+//console.log(data);
+for (var i = 0; i < json.result.length; i++) {
+  //console.log(json.result[i].iscoName);
+    document.querySelector(".app1").innerHTML +=  json.result[i].cityCode + " " + json.result[i].cityName + ", ";
+};
+}
+
+// data00 群馬県　人口推移
+var data0 = [{"year": 1960, "value": 1578476},
+{"year": 1965,"value": 1605584},
+{"year": 1970,"value": 1658909},
+{"year": 1975,"value": 1756480},
+{"year": 1980,"value": 1848562},
+{"year": 1985,"value": 1921259},
+{"year": 1990,"value": 1966265},
+{"year": 1995,"value": 2003540},
+{"year": 2000,"value": 2024852},
+{"year": 2005,"value": 2024135},
+{"year": 2010,"value": 2008068},
+{"year": 2015,"value": 1971225},
+{"year": 2020,"value": 1920494},
+{"year": 2025,"value": 1857908},
+{"year": 2030,"value": 1787483},
+{"year": 2035,"value": 1710958},
+{"year": 2040,"value": 1629974}
+];
+
+var svg0 = d3.select("#svg0"),
+  margin = {top: 20, right: 20, bottom: 30, left: 40}, 
+  width = +svg0.attr("width") - margin.left - margin.right,
+  height = +svg0.attr("height") - margin.top - margin.bottom, 
+  g0 = svg0.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+data0.forEach(function(d){
+ d.year = parseInt(d.year);
+ d.value = +parseInt(d.value);
+});
+// set the ranges
+var x = d3.scaleBand()
+          .range([0, width])
+          .padding(0.1);
+var y = d3.scaleLinear()
+          .range([height, 0]);
+x.domain(data0.map(function(d) { return d.year }));
+y.domain([0, d3.max(data0, function(d) { return d.value; })]);
+
+g0.append("g")
+  .selectAll("g")
+  .data(data0)
+  .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return x(d.year); })
+    .attr("width", x.bandwidth())
+    .attr("y", function(d) { return y(d.value); })
+    .attr("height", function(d) { return height - y(d.value); });
+
+g0.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+g0.append("g")
+    .call(d3.axisLeft(y).ticks(null, "s"))
+    .attr("y", y(y.ticks().pop()) + 0.5)
+
+//
+// data01 群馬県の人口構成
+var data1 = [
+{date:"1960","総人口":"1578476", "年少人口":"500151", "生産年齢人口": "981555",  "老年人口": "96770" },
+{date:"1965","総人口":"1605584", "年少人口":"423874", "生産年齢人口": "1071433", "老年人口": "110277" },
+{date:"1970","総人口":"1658909", "年少人口":"397032", "生産年齢人口": "1131078", "老年人口": "130799" },
+{date:"1975","総人口":"1756480", "年少人口":"427621", "生産年齢人口": "1174392", "老年人口": "154371" },
+{date:"1980","総人口":"1848562", "年少人口":"441548", "生産年齢人口": "1222826", "老年人口": "184115" },
+{date:"1985","総人口":"1921259", "年少人口":"424829", "生産年齢人口": "1281535", "老年人口": "214871" },
+{date:"1990","総人口":"1966265", "年少人口":"368080", "生産年齢人口": "1340557", "老年人口": "256367" },
+{date:"1995","総人口":"2003540", "年少人口":"329960", "生産年齢人口": "1360039", "老年人口": "313425" },
+{date:"2000","総人口":"2024852", "年少人口":"306895", "生産年齢人口": "1346441", "老年人口": "367117" },
+{date:"2005","総人口":"2024135", "年少人口":"291995", "生産年齢人口": "1314259", "老年人口": "416909" },
+{date:"2010","総人口":"2008068", "年少人口":"275225", "生産年齢人口": "1251608", "老年人口": "470520" },
+{date:"2015","総人口":"1971225", "年少人口":"254094", "生産年齢人口": "1173658", "老年人口": "543473" },
+{date:"2020","総人口":"1920494", "年少人口":"229720", "生産年齢人口": "1112823", "老年人口": "577951" },
+{date:"2025","総人口":"1857908", "年少人口":"208240", "生産年齢人口": "1067982", "老年人口": "581686" },
+{date:"2030","総人口":"1787483", "年少人口":"189014", "生産年齢人口": "1018618", "老年人口": "579851" },
+{date:"2035","総人口":"1710958", "年少人口":"177245", "生産年齢人口": "951102", "老年人口": "582611" },
+{date:"2040","総人口":"1629974", "年少人口":"169341", "生産年齢人口": "864193", "老年人口": "596440" }
+];
+
+var svg = d3.select("#svg1"),
+    margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//var parseTime = d3.timeParse("%Y");
+
+var x0 = d3.scaleBand()
+    .rangeRound([0, width])
+    .paddingInner(0.1);
+
+var x1 = d3.scaleBand()
+    .padding(0.05);
+
+var y = d3.scaleLinear()
+    .rangeRound([height, 0]);
+
+var z = d3.scaleOrdinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#bed7db", "#529098", "#ff8c00"]);
+
+data1.forEach(function(d){
+ d.date = parseInt(d.date);
+});
+
+data1.columns = ["date", "総人口", "年少人口", "生産年齢人口", "老年人口"];
+
+  var population = data1.columns.slice(1).map(function(id) {
+    return {
+      id: id,
+      values: data1.map(function(d) {
+      return {date: d.date, value: d[id]};
+      })
+    };
+  });
+  
+  var keys = data1.columns.slice(1);
+
+
+  x0.domain(data1.map(function(d) { return d.date; }));
+  x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+  y.domain([0, 2000000]).nice();
+  //y.domain([0, d3.max(data1, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
+
+  g.append("g")
+    .selectAll("g")
+    .data(data1)
+    .enter().append("g")
+      .attr("transform", function(d) { return "translate(" + x0(d.date) + ",0)"; })
+    .selectAll("rect")
+    .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+    .enter().append("rect")
+      .attr("x", function(d) { return x1(d.key); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("width", x1.bandwidth())
+      .attr("height", function(d) { return height - y(d.value); })
+      .attr("fill", function(d) { return z(d.key); });
+
+  g.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x0));
+
+  g.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+    .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Population");
+
+  var legend = g.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+    .selectAll("g")
+    .data(keys.slice().reverse())
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 19)
+      .attr("width", 19)
+      .attr("height", 19)
+      .attr("fill", z);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9.5)
+      .attr("dy", "0.32em")
+      .text(function(d) { return d; });
+
+
+//
+// data02 1980年　群馬県の男女別　人口ピラミッド
+var data_b = [
+{"class": "0～4歳", "man": 70504, "woman": 67237},
+{"class": "5～9歳", "man": 82668, "woman": 79253},
+{"class": "10～14歳","man": 72657, "woman": 69229},
+{"class": "15～19歳","man": 62445, "woman": 60763},
+{"class": "20～24歳", "man": 52224,"woman": 54724},
+{"class": "25～29歳", "man": 70043, "woman": 70451},
+{"class": "30～34歳", "man": 86061, "woman": 83302},
+{"class": "35～39歳","man": 72444, "woman": 69309},
+{"class": "40～44歳", "man": 63435, "woman": 61653},
+{"class": "45～49歳","man": 62165,"woman": 62192},
+{"class": "50～54歳","man": 59142, "woman": 59900},
+{"class": "55～59歳", "man": 42036, "woman": 52897},
+{"class": "60～64歳", "man": 33884, "woman": 43756},
+{"class": "65～69歳","man": 30372,  "woman": 38242},
+{"class": "70～74歳","man": 23487, "woman": 28735},
+{"class": "75～79歳", "man": 15324,"woman": 21022},
+{"class": "80～84歳","man": 7158,"woman": 11270},
+{"class": "85～89歳","man": 2247,"woman": 4420},
+{"class": "90歳～","man": 529,"woman": 1309}
+]
+
+var svg2 = d3.select("#svg2"),
+  margin = {top: 20, right: 20, bottom: 30, left: 40}, 
+  width = +svg2.attr("width") - margin.left - margin.right,
+  height = +svg2.attr("height") - margin.top - margin.bottom, 
+  g2 = svg2.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+data_b.forEach(function(d){
+ d.class = String(d.class);
+});
+
+data_b.columns = ["class", "man", "woman"]; 
+
+var population2 = data_b.columns.slice(1).map(function(id) {
+  return {
+    id: id, 
+    values: data_b.map(function(d) {
+      return { class: d.class, value: d[id] }; 
+    })
+  };
+});
+
+var keys = data_b.columns.slice(1);
+
+
+
+x0.domain(data_b.map(function(d) { return d.class; }));
+x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+y.domain([0, d3.max(data_b, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
+
+
+  g2.append("g")
+    .selectAll("g")
+    .data(data_b)
+    .enter().append("g")
+      .attr("transform", function(d) { return "translate(" + x0(d.class) + ",0)"; })
+    .selectAll("rect")
+    .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+    .enter().append("rect")
+      .attr("x", function(d) { return x1(d.key); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("width", x1.bandwidth())
+      .attr("height", function(d) { return height - y(d.value); })
+      .attr("fill", function(d) { return z(d.key); });
+
+  g2.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x0));
+
+  g2.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+    .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Population");
+
+  
+
+
+  var legend = g2.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+    .selectAll("g")
+    .data(keys.slice().reverse())
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 19)
+      .attr("width", 19)
+      .attr("height", 19)
+      .attr("fill", z);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9.5)
+      .attr("dy", "0.32em")
+      .text(function(d) { return d; });
+
+
+
+// 
+// data03 2030年　群馬県の男女別　人口ピラミッド
+var data_c = [
+{class: "0～4歳", man: 30246, woman: 28697},
+{class: "5～9歳", man: 31718, woman: 30094},
+{class: "10～14歳", man: 35029, woman: 33230},
+{class: "15～19歳", man: 39071, woman: 37085},
+{class: "20～24歳", man: 40423, woman: 38084},
+{class: "25～29歳", man: 46581, woman: 43266},
+{class: "30～34歳", man: 49359, woman: 45804},
+{class: "35～39歳", man: 48372, woman: 44223},
+{class: "40～44歳", man: 48071, woman: 44219},
+{class: "45～49歳", man: 53478, woman: 49631},
+{class: "50～54歳", man: 62469, woman: 59255},
+{class: "55～59歳", man: 72805, woman: 70756},
+{class: "60～64歳", man: 62977, woman: 62689},
+{class: "65～69歳", man: 54858, woman: 57031},
+{class: "70～74歳", man: 50574, woman: 54909},
+{class: "75～79歳", man: 52846, woman: 62491},
+{class: "80～84歳", man: 50588, woman: 66243},
+{class: "85～89歳", man: 27763, woman: 44134},
+{class: "90歳～", man: 17095, woman: 41319}];
+
+var svg3 = d3.select("#svg3"),
+  margin = {top: 20, right: 20, bottom: 30, left: 40}, 
+  width = +svg3.attr("width") - margin.left - margin.right,
+  height = +svg3.attr("height") - margin.top - margin.bottom, 
+  g3 = svg3.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+data_c.forEach(function(d){
+ d.class = String(d.class);
+});
+
+data_c.columns = ["class", "man", "woman"]; 
+
+var population3 = data_c.columns.slice(1).map(function(id) {
+  return {
+    id: id, 
+    values: data_c.map(function(d) {
+      return { class: d.class, value: d[id] }; 
+    })
+  };
+});
+
+
+var keys = data_c.columns.slice(1);
+
+
+
+x0.domain(data_c.map(function(d) { return d.class; }));
+x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+y.domain([0, d3.max(data_c, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
+
+
+  g3.append("g")
+    .selectAll("g")
+    .data(data_c)
+    .enter().append("g")
+      .attr("transform", function(d) { return "translate(" + x0(d.class) + ",0)"; })
+    .selectAll("rect")
+    .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+    .enter().append("rect")
+      .attr("x", function(d) { return x1(d.key); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("width", x1.bandwidth())
+      .attr("height", function(d) { return height - y(d.value); })
+      .attr("fill", function(d) { return z(d.key); });
+
+  g3.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x0));
+
+  g3.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+    .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Population");
+
+  
+
+
+  var legend = g3.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+    .selectAll("g")
+    .data(keys.slice().reverse())
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 19)
+      .attr("width", 19)
+      .attr("height", 19)
+      .attr("fill", z);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9.5)
+      .attr("dy", "0.32em")
+      .text(function(d) { return d; });
+
+// 
+// data04 特産品マップ
+var map = new L.Map(d3.select('#data4').node()).setView([36.4219088　, 139.0032936], 10);
+var tile = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var url2 = "https://opendata.resas-portal.go.jp/api/v1/tourism/attractions?prefCode=10&cityCode=-"
+d3.request(url2)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback2);
+
+function callback2(json){
+
+
+var tile = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+
+var arr = [];
+for (var i = 0; i < json.result["data"].length; i++) {
+    arr = json.result["data"][i].resourceName;
+    //console.log(arr);
+    var marker = L.marker([json.result["data"][i].lat, json.result["data"][i].lng])
+        .bindPopup(arr)
+        .addTo(map);
+};
+
+
+}
+
+</script>
+</body>
+</html>
+    
