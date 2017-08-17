@@ -1,0 +1,367 @@
+[
+{"lat": 36.390772,"lng": 139.059909,"resourceCode": 1218,"resourceName": "こんにゃく畑の風景"},
+{"lat": 36.390772,"lng": 139.059909,"resourceCode": 1219,"resourceName": "なし園"},
+{"lat": 36.3953,"lng": 139.063067,"resourceCode": 1220,"resourceName": "るなぱあく"},
+{"lat": 36.46785,"lng": 139.17762,"resourceCode": 1221,"resourceName": "群馬のきのこ園"},
+{"lat": 36.390746,"lng": 139.059941,"resourceCode": 1222,"resourceName": "群馬の苺やよいひめ園"},
+{"lat": 36.549973,"lng": 139.186824,"resourceCode": 1223,"resourceName": "赤城山"},
+{"lat": 36.418327,"lng": 139.049153,"resourceCode": 1224,"resourceName": "前橋のバラ園"},
+{"lat": 36.386257,"lng": 139.063498,"resourceCode": 1225,"resourceName": "龍海院"},
+{"lat": 36.395859,"lng": 139.062308,"resourceCode": 1226,"resourceName": "臨江閣"},
+{"lat": 36.22055,"lng": 138.983583,"resourceCode": 1227,"resourceName": "牛伏山"},
+{"lat": 36.321618,"lng": 139.003278,"resourceCode": 1228,"resourceName": "群馬交響楽団のコンサート"},
+{"lat": 36.323809,"lng": 139.007021,"resourceCode": 1229,"resourceName": "高崎映画祭"},
+{"lat": 36.330254,"lng": 138.956856,"resourceCode": 1230,"resourceName": "少林山達磨寺"},
+{"lat": 36.476944,"lng": 138.878409,"resourceCode": 1231,"resourceName": "榛名山"},
+{"lat": 36.265221,"lng": 138.996866,"resourceCode": 1232,"resourceName": "多胡碑"},
+{"lat": 36.310968,"lng": 138.980565,"resourceCode": 1233,"resourceName": "白衣大観音"},
+{"lat": 36.405491,"lng": 139.330688,"resourceCode": 1234,"resourceName": "のこぎり屋根の風景"},
+{"lat": 36.416403,"lng": 139.343442,"resourceCode": 1235,"resourceName": "桐生からくり人形芝居館"},
+{"lat": 36.423731,"lng": 139.341025,"resourceCode": 1236,"resourceName": "桐生が岡公園"},
+{"lat": 36.401477,"lng": 139.339656,"resourceCode": 1237,"resourceName": "桐生八木節まつり"},
+{"lat": 36.284444,"lng": 139.224158,"resourceCode": 1238,"resourceName": "ブルーベリー園"},
+{"lat": 36.342019,"lng": 139.19746,"resourceCode": 1239,"resourceName": "華蔵寺公園"},
+{"lat": 36.338851,"lng": 139.251382,"resourceCode": 1240,"resourceName": "小泉稲荷大鳥居"},
+{"lat": 36.363767,"lng": 139.320926,"resourceCode": 1241,"resourceName": "やぶ塚温泉"},
+{"lat": 36.317803,"lng": 139.377472,"resourceCode": 1242,"resourceName": "金山城跡"},
+{"lat": 36.291864,"lng": 139.394354,"resourceCode": 1243,"resourceName": "女体山古墳"},
+{"lat": 36.291678,"lng": 139.391025,"resourceCode": 1244,"resourceName": "天神山古墳"},
+{"lat": 36.711693,"lng": 139.050318,"resourceCode": 1245,"resourceName": "さくらんぼ園"},
+{"lat": 36.662351,"lng": 139.08986,"resourceCode": 1246,"resourceName": "りんご園"},
+{"lat": 36.779653,"lng": 139.074562,"resourceCode": 1247,"resourceName": "玉原高原"},
+{"lat": 36.63232,"lng": 139.054619,"resourceCode": 1248,"resourceName": "沼田の河岸段丘"},
+{"lat": 36.701668,"lng": 139.206812,"resourceCode": 1249,"resourceName": "吹割の滝"},
+{"lat": 36.669304,"lng": 139.209358,"resourceCode": 1250,"resourceName": "老神温泉"},
+{"lat": 36.242066,"lng": 139.551562,"resourceCode": 1251,"resourceName": "つつじが岡公園"},
+{"lat": 36.25704,"lng": 139.518892,"resourceCode": 1252,"resourceName": "日本ロマンチック街道"},
+{"lat": 36.223937,"lng": 139.531891,"resourceCode": 1253,"resourceName": "分福茶釜の茂林寺"},
+{"lat": 36.521135,"lng": 139.077907,"resourceCode": 1254,"resourceName": "ぶどう園"},
+{"lat": 36.498005,"lng": 138.918066,"resourceCode": 1255,"resourceName": "伊香保温泉"},
+{"lat": 36.481167,"lng": 138.929589,"resourceCode": 1256,"resourceName": "浅間山"},
+{"lat": 36.479581,"lng": 138.94819,"resourceCode": 1257,"resourceName": "船尾滝"},
+{"lat": 36.283099,"lng": 139.075121,"resourceCode": 1258,"resourceName": "群馬の森"},
+{"lat": 36.128822,"lng": 139.030148,"resourceCode": 1259,"resourceName": "三波石峡"},
+{"lat": 36.161715,"lng": 139.000041,"resourceCode": 1260,"resourceName": "三波川（サクラ）"},
+{"lat": 36.140315,"lng": 139.003023,
+    "resourceCode": 1261,
+    "resourceName": "神流川"
+  },
+  {
+    "lat": 36.174181,
+    "lng": 139.053448,
+    "resourceCode": 1262,
+    "resourceName": "八塩温泉"
+  },
+  {
+    "lat": 36.255447,
+    "lng": 138.887986,
+    "resourceCode": 1263,
+    "resourceName": "富岡製糸場"
+  },
+  {
+    "lat": 36.303102,
+    "lng": 138.849342,
+    "resourceCode": 1264,
+    "resourceName": "磯部温泉"
+  },
+  {
+    "lat": 36.336433,
+    "lng": 138.733669,
+    "resourceCode": 1265,
+    "resourceName": "碓氷峠鉄道施設"
+  },
+  {
+    "lat": 36.30075,
+    "lng": 138.740397,
+    "resourceCode": 1266,
+    "resourceName": "妙義山"
+  },
+  {
+    "lat": 36.433587,
+    "lng": 139.277445,
+    "resourceCode": 1267,
+    "resourceName": "わたらせ渓谷鐵道"
+  },
+  {
+    "lat": 36.442061,
+    "lng": 139.281724,
+    "resourceCode": 1268,
+    "resourceName": "高津戸峡"
+  },
+  {
+    "lat": 36.466685,
+    "lng": 139.308333,
+    "resourceCode": 1269,
+    "resourceName": "小平の里"
+  },
+  {
+    "lat": 36.071941,
+    "lng": 138.776309,
+    "resourceCode": 1270,
+    "resourceName": "不二洞"
+  },
+  {
+    "lat": 36.116056,
+    "lng": 138.916955,
+    "resourceCode": 1271,
+    "resourceName": "恐竜の足跡(漣岩(さざなみいわ))"
+  },
+  {
+    "lat": 36.212489,
+    "lng": 138.789103,
+    "resourceCode": 1272,
+    "resourceName": "荒船風穴"
+  },
+  {
+    "lat": 36.244461,
+    "lng": 138.71081,
+    "resourceCode": 1273,
+    "resourceName": "長楽寺"
+  },
+  {
+    "lat": 36.686145,
+    "lng": 138.774704,
+    "resourceCode": 1274,
+    "resourceName": "四万温泉"
+  },
+  {
+    "lat": 36.648201,
+    "lng": 138.643064,
+    "resourceCode": 1275,
+    "resourceName": "尻焼温泉"
+  },
+  {
+    "lat": 36.624445,
+    "lng": 138.764765,
+    "resourceCode": 1276,
+    "resourceName": "沢渡温泉"
+  },
+  {
+    "lat": 36.719481,
+    "lng": 138.642851,
+    "resourceCode": 1277,
+    "resourceName": "野反湖"
+  },
+  {
+    "lat": 36.55363,
+    "lng": 138.70767,
+    "resourceCode": 1278,
+    "resourceName": "川原湯温泉"
+  },
+  {
+    "lat": 36.447852,
+    "lng": 138.609881,
+    "resourceCode": 1279,
+    "resourceName": "浅間大滝"
+  },
+  {
+    "lat": 36.516904,
+    "lng": 138.530164,
+    "resourceCode": 1280,
+    "resourceName": "キャベツ畑の風景"
+  },
+  {
+    "lat": 36.505574,
+    "lng": 138.458923,
+    "resourceCode": 1281,
+    "resourceName": "愛妻の丘"
+  },
+  {
+    "lat": 36.440003,
+    "lng": 138.535217,
+    "resourceCode": 1282,
+    "resourceName": "鬼押出し"
+  },
+  {
+    "lat": 36.541724,
+    "lng": 138.412819,
+    "resourceCode": 1283,
+    "resourceName": "四阿山"
+  },
+  {
+    "lat": 36.44544,
+    "lng": 138.419228,
+    "resourceCode": 1284,
+    "resourceName": "鹿沢温泉"
+  },
+  {
+    "lat": 36.474696,
+    "lng": 138.547849,
+    "resourceCode": 1285,
+    "resourceName": "浅間高原しゃくなげ園"
+  },
+  {
+    "lat": 36.430288,
+    "lng": 138.55717,
+    "resourceCode": 1286,
+    "resourceName": "浅間山熔岩樹型"
+  },
+  {
+    "lat": 36.438292,
+    "lng": 138.412331,
+    "resourceCode": 1287,
+    "resourceName": "湯の丸レンゲツツジ群落"
+  },
+  {
+    "lat": 36.468203,
+    "lng": 138.566181,
+    "resourceCode": 1288,
+    "resourceName": "北軽井沢大学村"
+  },
+  {
+    "lat": 36.636894,
+    "lng": 138.510546,
+    "resourceCode": 1289,
+    "resourceName": "万座温泉"
+  },
+  {
+    "lat": 36.617763,
+    "lng": 138.600217,
+    "resourceCode": 1290,
+    "resourceName": "旧草軽電鉄北軽井沢駅舎・電車モニュメント"
+  },
+  {
+    "lat": 36.621758,
+    "lng": 138.593274,
+    "resourceCode": 1291,
+    "resourceName": "草津温泉"
+  },
+  {
+    "lat": 36.644393,
+    "lng": 138.527516,
+    "resourceCode": 1292,
+    "resourceName": "草津白根山"
+  },
+  {
+    "lat": 36.562318,
+    "lng": 138.721263,
+    "resourceCode": 1293,
+    "resourceName": "吾妻渓谷"
+  },
+  {
+    "lat": 36.537784,
+    "lng": 138.928486,
+    "resourceCode": 1294,
+    "resourceName": "箱島湧水（湧水地）"
+  },
+  {
+    "lat": 36.772469,
+    "lng": 139.225243,
+    "resourceCode": 1295,
+    "resourceName": "パウダースノーエリアワンダーランド片品"
+  },
+  {
+    "lat": 36.757253,
+    "lng": 139.197514,
+    "resourceCode": 1296,
+    "resourceName": "猿追い祭り"
+  },
+  {
+    "lat": 36.823533,
+    "lng": 139.339852,
+    "resourceCode": 1297,
+    "resourceName": "丸沼堰提"
+  },
+  {
+    "lat": 36.759719,
+    "lng": 139.178519,
+    "resourceCode": 1298,
+    "resourceName": "針山の天王ザクラ"
+  },
+  {
+    "lat": 36.798333,
+    "lng": 139.374167,
+    "resourceCode": 1299,
+    "resourceName": "日光白根山"
+  },
+  {
+    "lat": 36.837914,
+    "lng": 139.247288,
+    "resourceCode": 1300,
+    "resourceName": "尾瀬"
+  },
+  {
+    "lat": 36.772467,
+    "lng": 139.225242,
+    "resourceCode": 1301,
+    "resourceName": "尾瀬の郷片品湧水群"
+  },
+  {
+    "lat": 36.795815,
+    "lng": 139.192314,
+    "resourceCode": 1302,
+    "resourceName": "武尊牧場のレンゲツツジ"
+  },
+  {
+    "lat": 36.804773,
+    "lng": 139.233905,
+    "resourceCode": 1303,
+    "resourceName": "片品温泉郷"
+  },
+  {
+    "lat": 36.639741,
+    "lng": 139.065823,
+    "resourceCode": 1304,
+    "resourceName": "レタス畑の風景"
+  },
+  {
+    "lat": 36.614595,
+    "lng": 139.04289,
+    "resourceCode": 1305,
+    "resourceName": "利根川"
+  },
+  {
+    "lat": 36.696099,
+    "lng": 138.908311,
+    "resourceCode": 1306,
+    "resourceName": "たくみの里"
+  },
+  {
+    "lat": 36.730673,
+    "lng": 138.892781,
+    "resourceCode": 1307,
+    "resourceName": "猿ヶ京温泉"
+  },
+  {
+    "lat": 36.738627,
+    "lng": 138.9839,
+    "resourceCode": 1308,
+    "resourceName": "上牧温泉"
+  },
+  {
+    "lat": 36.788751,
+    "lng": 138.956648,
+    "resourceCode": 1309,
+    "resourceName": "水上温泉郷"
+  },
+  {
+    "lat": 36.6787,
+    "lng": 138.999064,
+    "resourceCode": 1310,
+    "resourceName": "谷川岳"
+  },
+  {
+    "lat": 36.80528,
+    "lng": 139.132825,
+    "resourceCode": 1311,
+    "resourceName": "武尊山"
+  },
+  {
+    "lat": 36.259062,
+    "lng": 139.406808,
+    "resourceCode": 1312,
+    "resourceName": "大泉カルナバル"
+  },
+  {
+    "lat": 36.262012,
+    "lng": 139.45956,
+    "resourceCode": 1313,
+    "resourceName": "アルテナード"
+  },
+  {
+    "lat": 36.272673,
+    "lng": 139.489793,
+    "resourceCode": 1314,
+    "resourceName": "国指定名勝楽山園"
+  }
+]

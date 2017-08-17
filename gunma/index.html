@@ -52,7 +52,9 @@ div {
   font-weight: 100;
   line-height:200%;
 }
-
+div.graph {
+  margin-bottom:10em;
+}
 .bar { fill:#529098 }
 </style>
 
@@ -85,9 +87,9 @@ div {
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="work.html">About us</a></li>
+                    <li><a href="#">About us</a></li>
                     <li><a href="#">RESASとは</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
@@ -103,7 +105,7 @@ div {
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1 class="animated fadeInUp">RESAS <br>データビジュアライゼーション <br> Gunma 1st Edition</h1>
+              <h1 class="animated fadeInUp"><img src="./img/icon1.png" width="108" height="108" alt="first">RESAS <br>データビジュアライゼーション <br> Gunma 1st Edition</h1>
               <p class="animated fadeInUp">データから見える群馬の過去と今そして未来をもう一度知る </br> 
                 RESAS が公開しているオープンソースを角度を変えてビジュアル表現</p>
             </div>
@@ -291,7 +293,7 @@ div {
             <p>RESAS（地域経済分析システム）のデータで使用する群馬県のコード（prefCode=10）と市区町村コード(cityCode)</p>
           </div>
         </div><!--row-->
-        <div class="row">
+        <div class="row graph">
           <div class="col-md-8">
             <div class="block">
               <ul class="clearfix">
@@ -311,33 +313,38 @@ div {
           </div>
         </div><!--row--><div id="data0"></div>
 <!--data0 群馬県　総人口推移-->
-        <div class="row">
+        <div class="row graph">
           <div class="col-md-12">
           </div>
           <h3>群馬県　総人口推移</h3>
+          <p>群馬県総人口はRESAS（地域経済分析システム）から1960年から2040年のデータを表示している。それぞれの人口は5年ごとの数字で表示し、2014年を境に実績値と推計値が分かれている。
+1960年、人口は1578476人（約157万人）で、最大数は2000年の2024852人（約200万人）に増え、その後2040年まで減り続ける。2040年は推計1629974人（160万人）。
+</p>
           <svg width="730" height="410" id="svg0"></svg>
         </div><!--row-->
 
 <!--data1 群馬県　人口構成-->
-        <div class="row">
+        <div class="row graph">
           <div class="col-md-12">
-          </div>
           <h3> 群馬県　人口構成</h3>
+          <p>人口構成は4つの部門に分かれている。１つ目は総人口。2つ目は年少人口で、1960年では500151(約50万人)、そのあと減る傾向だったが、1975年に427621（約42万人）、1980年に441548(約44万人)に増えるが、以降は減少する。2040年は169341（約17万人）となる。</p>
           <svg width="730" height="410" id="svg1"></svg>
+          </div>
         </div><!--row-->
 
 
 <!--data2 群馬県　男女別　人口ピラミッド-->
-        <div class="row">
+        <div class="row graph">
           <div class="col-md-12">
-          </div>
           <h3> 群馬県　1980年　男女別　人口ピラミッド</h3>
+          <p>1980年と2030年の男女別人口ピラミッドでは、1980年に30〜34歳の男性で86061（約8万6千人）女性で83302（約8万3千人）。また、20～24歳の男性で52224（約5万2千人）、女性は54724（約5万4千人）。2030年に1980年と比べると、55～59歳の年代が最大になり、男性が72805（約7万2千人）で女性が70756（約7万人）である。その後、女性の75〜79歳が62491（約6万2千人）、女性の80～84歳 は 66243（約6万6千人）で比較的に大きな割合を占める。</p>
           <svg width="730" height="410" id="svg2"></svg>
+          </div>
         </div><!--row-->
 
 
 <!--data3 群馬県　男女別　人口ピラミッド-->
-        <div class="row">
+        <div class="row graph">
           <div class="col-md-12">
           <h3> 群馬県　2030年　男女別　人口ピラミッド</h3>
           <svg width="730" height="410" id="svg3"></svg>
@@ -345,9 +352,12 @@ div {
         </div><!--row-->
 
 <!--data4 群馬県　特産品マップ-->
-        <div class="row">
+        <div class="row graph">
           <div class="col-md-12">
           <h3>群馬県　観光資源マップ</h3>
+          <p>群馬観光資源リソースが県内に96カ所ある。観光資源名はマーカーをクリックすると名前が出る。</p>
+          <p class="app2"></p>
+
           <div style='width:730px;height:600px; font-size:800%' id="data4"></div>
           </div>
         </div><!--row-->
@@ -833,10 +843,20 @@ for (var i = 0; i < json.result["data"].length; i++) {
     var marker = L.marker([json.result["data"][i].lat, json.result["data"][i].lng])
         .bindPopup(arr)
         .addTo(map);
+
 };
 
+for (var i = 0; i < json.result["data"].length; i++) {
+document.querySelector('.app2').innerHTML += json.result["data"][i].resourceCode + " " + json.result["data"][i].resourceName + ", " ;
+};
+//for (var i = 0; i < json.result["data"].length; i++) {
+//document.querySelector('.app2').innerHTML = "aaa";
+//  console.log(arr[i]);
+//};
 
 }
+
+
 
 </script>
 </body>
