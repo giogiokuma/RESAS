@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  padding-left:50px;
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+    .line {
+      fill: none;
+      stroke: #529098;
+      stroke-width: 1.9px;
+}
+ .toolTip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6F257F;
+  padding: 14px;
+  text-align: center;
+  -moz-border-radius:7px;/*firefox*/
+  -webkit-border-radius:7px;/*Safari and Chrome*/
+  border-radius:7px;/*Opera, IE9, future-proofing*/
+} 
+</style>
+<body>
+<h3>2015年　群馬県　有効求職者数（女性）</h3>
+<svg width="800" height="500" id="app"></svg>
+
+
+
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+// 
+// 2015年　群馬県　有効求職者数（女性）
+
+var url1 = "https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio?prefCode=10&year=2015&matter=3&class=2";
+  d3.request(url1) 
+  .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+  .mimeType("application/json")
+  .response(function(xhr) { return JSON.parse(xhr.responseText) })
+  .get(callback1);
+
+function callback1(json) {
+  //var data_1 = json.result["data"];
+  //console.log(data_1); 
+
+}
+// ベースフォーマットを作成
+var svg = d3.select("svg"),
+    margin = {top: 20, right:20, bottom:30, left:120},
+    width = +svg.attr("width") - margin.left  - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+
+var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+
+var x = d3.scaleLinear().range([0, width]); 
+var y = d3.scaleBand().range([height, 0]); 
+
+// 
+var g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+
+var data =
+[{"broadCode": "03","broadName": "事務的職業","middleCode": "0301","middleName": "一般事務員","value": 57610},
+{"broadCode": "11","broadName": "運搬・清掃等の職業","middleCode": "1106","middleName": "その他の運搬等の職業","value": 17371},
+{"broadCode": "05","broadName": "サービスの職業","middleCode": "0502","middleName": "介護サービスの職業","value": 9871},
+{"broadCode": "04","broadName": "販売の職業","middleCode": "0401","middleName": "商品販売の職業","value": 9608},
+{"broadCode": "08","broadName": "生産工程の職業","middleCode": "0806","middleName": "機械組立の職業","value": 7814},
+{"broadCode": "02","broadName": "専門的・技術的職業","middleCode": "0213","middleName": "社会福祉の専門的職業","value": 6948},
+{"broadCode": "02","broadName": "専門的・技術的職業","middleCode": "0209","middleName": "保健師、助産師等","value": 6427},
+{"broadCode": "08","broadName": "生産工程の職業","middleCode": "0805","middleName": "製品製造・加工処理","value": 4947},
+{"broadCode": "05","broadName": "サービスの職業","middleCode": "0505","middleName": "飲食物調理の職業","value": 4415},
+{"broadCode": "05","broadName": "サービスの職業","middleCode": "0507","middleName": "接客・給仕の職業","value": 3793},
+{"broadCode": "11","broadName": "運搬・清掃等の職業","middleCode": "1103","middleName": "清掃の職業","value": 3570},
+{"broadCode": "03","broadName": "事務的職業","middleCode": "0304","middleName": "営業・販売関連事務員","value": 2233},
+{"broadCode": "05","broadName": "サービスの職業","middleCode": "0503","middleName": "保健医療サービス","value": 2116},
+{"broadCode": "03","broadName": "事務的職業","middleCode": "0302","middleName": "会計事務員","value": 2045},
+{"broadCode": "02","broadName": "専門的・技術的職業","middleCode": "0212","middleName": "その他の保健医療","value": 1938},
+{"broadCode": "99","broadName": "分類不能の職業","middleCode": "9901","middleName": "分類不能の職業","value": 1777},
+{"broadCode": "02","broadName": "専門的・技術的職業","middleCode": "0211","middleName": "医療技術者","value": 1625},
+{"broadCode": "05","broadName": "サービスの職業","middleCode": "0509","middleName": "その他のサービス","value": 1540},
+{"broadCode": "02","broadName": "専門的・技術的職業","middleCode": "0222","middleName": "その他の専門的職業","value": 1412},
+{"broadCode": "05","broadName": "サービスの職業","middleCode": "0504","middleName": "生活衛生サービス","value": 1361}
+];
+
+data.forEach(function(d) {
+  d.middleName = String(d.middleName);
+  d.value = parseInt(d.value);
+
+})
+
+x.domain([0, d3.max(data, function(d) { return d.value; })]);
+y.domain(data.map(function(d) { return d.middleName; })).padding(0.1);
+
+g.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x).ticks(5).tickFormat(function(d) {return parseInt(d / 1000);}).tickSizeInner([-height]));
+
+g.append("g")
+  .attr("class", "y axis")
+  .call(d3.axisLeft(y));
+
+g.selectAll(".bar")
+  .data(data)
+  .enter().append("rect")
+  .attr("class", "bar")
+  .attr("x", 0)
+  .attr("height", y.bandwidth())
+  .attr("y", function(d) { return y(d.middleName); })
+  .attr("width", function(d) {return x(d.value); })
+  .on("mousemove", function(d){
+    tooltip 
+      .style("left", d3.event.pageX - 50 + "px")
+      .style("top", d3.event.pageY - 70 + "px")
+      .style("display", "inline-block")
+      .html((d.middleName) + "<br>" + (d.value) + "人");
+  })
+  .on("mouseout", function(d) {tooltip.style("display", "none"); });
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  padding-left:50px;
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+
+</style>
+
+<body>
+<h3>職業中分類　項目</h3>
+<div class="app"></div>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var url = "https://opendata.resas-portal.go.jp/api/v1/jobs/middle?iscoCode=H"
+d3.request(url)
+    .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+    .mimeType("application/json")
+    .response(function(xhr) { return JSON.parse(xhr.responseText) })
+    .get(callback);
+
+function callback(json){
+var data = json.result;
+
+for (var i = 0; i < json.result.length; i++) {
+  //console.log(json.result[i].iscoName);
+  document.querySelector(".app").innerHTML += json.result[i].iscoCode + " " + json.result[i].ismcoCode + " " + json.result[i].ismcoName + "</a><br />";
+};
+//data_2 = json.result["iscoName"];
+
+  //data_1.forEach(i in d) {
+  //  document.querySelector(".name").innerHTML = d[i].iscoName;
+  //}
+
+
+
+}
+
+
+</script>
+
+</body>
+</html>

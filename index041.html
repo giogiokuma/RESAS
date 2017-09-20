@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  padding-left:50px;
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+    .line {
+      fill: none;
+      stroke: #529098;
+      stroke-width: 1.9px;
+}
+  
+</style>
+<body>
+<h3>群馬県　求人・求職者</h3>
+<svg width="800" height="500" id="app"></svg>
+
+
+
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+// 
+// 群馬県　求人・求職者
+
+var url1 = "https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio?prefCode=10&year=2015&matter=1&class=1";
+  d3.request(url1) 
+  .header("X-API-KEY", "2tuRiAulZpl0l2EvgqfZKacOui7nVGDoXhOKKJQ0")
+  .mimeType("application/json")
+  .response(function(xhr) { return JSON.parse(xhr.responseText) })
+  .get(callback1);
+
+function callback1(json) {
+  var data_1 = json.result["data"];
+  //console.log(data_1); 
+
+
+
+}
+
+
+
+
+var svg = d3.select("#app"),
+  margin = {top:20, right: 80, bottom: 30, left: 50},
+  width = svg.attr("width") - margin.left - margin.right, 
+  height = svg.attr("height") - margin.top - margin.bottom,
+  g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var parseTime = d3.timeParse("%e/%Y");
+
+var x = d3.scaleTime().range([0, width]),
+    y = d3.scaleLinear().range([height, 0]),
+    z = d3.scaleOrdinal(d3.schemeCategory10); 
+
+var line = d3.line()
+    .curve(d3.curveBasis)
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.value); });
+var data = [{"year": "2011/04","value": 0.61},
+{"year": "2011/05","value": 0.56},
+{"year": "2011/06","value": 0.57},
+{"year": "2011/07","value": 0.62},
+{"year": "2011/08","value": 0.68},
+{"year": "2011/09","value": 0.76},
+{"year": "2011/10","value": 0.8},
+{"year": "2011/11","value": 0.87},
+{"year": "2011/12","value": 0.93},
+{"year": "2012/01","value": 0.92},
+{"year": "2012/02","value": 0.93},
+{"year": "2012/03","value": 0.89},
+{"year": "2012/04","value": 0.81},
+{"year": "2012/05","value": 0.79},
+{"year": "2012/06","value": 0.8},
+{"year": "2012/07","value": 0.84},
+{"year": "2012/08","value": 0.89},
+{"year": "2012/09","value": 0.93},
+{"year": "2012/10","value": 0.93},
+{"year": "2012/11","value": 0.93},
+{"year": "2012/12","value": 0.94},
+{"year": "2013/01","value": 0.94},
+{"year": "2013/02","value": 0.94},
+{"year": "2013/03","value": 0.92},
+{"year": "2013/04","value": 0.84},
+{"year": "2013/05","value": 0.83},
+{"year": "2013/06","value": 0.86},
+{"year": "2013/07","value": 0.93},
+{"year": "2013/08","value": 0.96},
+{"year": "2013/09","value": 0.97},
+{"year": "2013/10","value": 1.01},
+{"year": "2013/11","value": 1.06},
+{"year": "2013/12","value": 1.14},
+{"year": "2014/01","value": 1.14},
+{"year": "2014/02","value": 1.18},
+{"year": "2014/03","value": 1.11},
+{"year": "2014/04","value": 0.97},
+{"year": "2014/05","value": 0.94},
+{"year": "2014/06","value": 0.97},
+{"year": "2014/07","value": 0.98},
+{"year": "2014/08","value": 1},
+{"year": "2014/09","value": 1.06},
+{"year": "2014/10","value": 1.12},
+{"year": "2014/11","value": 1.19},
+{"year": "2014/12","value": 1.23},
+{"year": "2015/01","value": 1.23},
+{"year": "2015/02","value": 1.21},
+{"year": "2015/03","value": 1.16},
+{"year": "2015/04","value": 1.05},
+{"year": "2015/05","value": 1.04},
+{"year": "2015/06","value": 1.08},
+{"year": "2015/07","value": 1.14},
+{"year": "2015/08","value": 1.16},
+{"year": "2015/09","value": 1.21},
+{"year": "2015/10","value": 1.22}
+];
+
+
+data.forEach(function(d) {
+  d.year = parseTime(d.year); 
+  d.value = +parseFloat(d.value);
+});
+
+
+x.domain(d3.extent(data, function(d) { return d.year; }));
+y.domain([
+  0, d3.max(data, function(d) { return d.value })
+  ]);
+
+g.append("g")
+  .attr("class", "axis axis--x")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x));
+
+g.append("g")
+  .attr("class", "axis axis--y")
+  .call(d3.axisLeft(y))
+
+svg.data(data)
+  .enter().append("g");
+
+svg.append("path")
+  .attr("class", "line")
+  .attr("d", function(d) { return line(d.value); })
+  .style("stroke", function(d) { return d.value });
+
+
+
+</script>
+
+</body>
+</html>

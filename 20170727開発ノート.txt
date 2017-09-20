@@ -1,3 +1,25 @@
+
+
+20170824
+e. index041_A.html
+求人・求職者
+＊とったデータについて
+No.1 群馬県　>  2015年 > 有効求職者数（総数）> 職業中分類で見る
+https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio?prefCode=10&year=2015&matter=1&class=2
+
+No.2 群馬県　>  2015年 > 有効求職者数（男性）> 職業中分類で見る
+https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio?prefCode=10&year=2015&matter=2&class=2
+
+No.3 群馬県 > 2015年 > 有効求職者数（女性）> 職業中分類で見る
+https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio?prefCode=10&year=2015&matter=3&class=2
+
+No. 4 群馬県 > 2015年 > 有効求人数  > 職業中分類で見る
+https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio?prefCode=10&year=2015&matter=4&class=2
+
+No. 5 群馬県 > 2015年 > 就職件数 > 職業中分類で見る
+https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio?prefCode=10&year=2015&matter=5&class=2
+
+---------------  
 20170814 
 群馬県　男女2040 人口　
 d. index040_B.html 
