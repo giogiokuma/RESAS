@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaflet QuickStart 1</title>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+<script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+
+<script src="https://unpkg.com/topojson@3"></script>
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  padding-left:50px;
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+    .line {
+      fill: none;
+      stroke: #529098;
+      stroke-width: 1.9px;
+}
+  
+</style>
+
+</head>
+<body>
+
+
+<h3>新型コロナウィルスの感染者推移</h3>
+<div id="map" style="width:600px; height:600px"></div>
+
+
+<script>
+
+d3.json('JSON/Japan_Industrial_Revolution.geojson', function(geodata){
+    draw(geodata);
+}); 
+
+function draw(geodata) {
+    map = L.map('map').setView([36.3265281, 139.00918460000003], 10);
+    
+    //地理院地図レイヤー追加
+    L.tileLayer(
+        'http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+        {
+            attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>"
+        }
+    ).addTo(map);
+
+    
+    var onEachFeature = function(feature, layer) {
+            if (!feature.properties) return ;
+            var p = feature.properties;
+            var properties = '<div class="popup">';
+            if (p.name) properties += '<center>'+ p.name + '<center>';
+            if (p.img) properties += '<center><img src="'+ p.img + '" /></center>';
+            if (p.link) properties += '<p><a href="'+ p.link + '">link</a>';
+            properties += '</div>';
+            layer.bindPopup(properties);
+    }   
+    
+    var geojsonLayer = L.geoJson(null, {onEachFeature:onEachFeature}).addTo(map);
+    geojsonLayer.addData(geodata);
+}
+
+// d3.json('JSON/japan.geojson', function(geodata){
+//     draw(geodata);
+// }); 
+// function draw(geodata) {
+//   map = L.map('map').setView([36.3265281, 139.00918460000003], 10);
+    
+//     //地理院地図レイヤー追加
+//     L.tileLayer(
+//         'http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
+//         {
+//             attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>"
+//         }
+//     ).addTo(map);
+
+// }
+</script>
+
+</body>
+</html>

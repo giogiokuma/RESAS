@@ -1,0 +1,30 @@
+20200328  
+
+**コロナウィルスマップ**  
+
+d3.js v4 で描画
+https://qiita.com/hiyuzawa/items/b28fa4d380d02d8bd5a1
+
+
+**国土数値情報 鉄道データ**  
+http://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-v2_3.html
+
+```
+$ unzip N02-15_GML.zip
+
+$ ogr2ogr -f GeoJSON N02-15_RailroadSection.json N02-15_RailroadSection.shp
+```
+
+
+**s3-geo**  
+https://observablehq.com/collection/@d3/d3-geo
+```
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+var topology = topojson.topology({foo: geojson});
+
+```
+
+GitHub 
+
+https://github.com/topojson/topojson

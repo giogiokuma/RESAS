@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaflet QuickStart 1</title>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+<script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+
+
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  padding-left:50px;
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+    .line {
+      fill: none;
+      stroke: #529098;
+      stroke-width: 1.9px;
+}
+  
+</style>
+
+</head>
+<body>
+<h3>新型コロナウィルスの感染者推移</h3>
+<div  style='width:1200px;height:1000px'></div>
+
+
+
+<script>
+
+d3.csv("csv/COVID-19.csv", function(d, i, columns) {
+  for (var i = 1, n = columns.length; i < n; ++i)
+  d[columns[i]] = +d[columns[i]];
+  return d;
+  
+}, function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d){
+  //console.log(d.salesperson);
+  console.log(d.X)
+  console.log(d.Y);
+  
+  })
+});
+
+
+
+
+  
+</script>
+
+</body>
+</html>

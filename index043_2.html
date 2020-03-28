@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaflet QuickStart 1</title>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css' />
+<script src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<style>
+h3{
+  padding-left:100px;
+  color:#666;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+}
+div {
+  padding-left:50px;
+  color:#666;
+  font-size:80%;
+  font-family: Meiryo, "メイリオ", "Noto Sans Japanese",sans-serif;
+  font-weight: 100;
+  line-height:200%;
+}
+.bar {
+  fill: #529098;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+    .line {
+      fill: none;
+      stroke: #529098;
+      stroke-width: 1.9px;
+}
+
+.N02_002_1 { stroke: #6495ed; stroke-width: 2px;} /* JRの新幹線 */
+.N02_002_2 { stroke: #00bfff; stroke-width: 2px;} /* JRの在来線 */
+.N02_002_3 { stroke: #b8860b; stroke-width: 2px;} /* 公営鉄道 */
+.N02_002_4 { stroke: #2e8b57; stroke-width: 2px;} /* 民営鉄道 */
+.N02_002_5 { stroke: #ff4500; stroke-width: 2px;} /* 第三セクター */
+
+</style>
+
+</head>
+<body>
+
+
+<h3>新型コロナウィルスの感染者推移</h3>
+<div id="map" style="width:600px; height:600px"></div>
+
+
+<script>
+   var width = window.innerWidth;
+    var height = window.innerHeight;
+    var svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+    var projection = d3.geoMercator()
+                        .center([136, 38])
+                        .scale(3300)
+                        .translate([width/2, height/2]);
+    var path = d3.geoPath(projection);
+
+    console.log(topojson);
+
+    d3.json("map_topo.json", function(json) {
+        svg.selectAll("path")
+            .data(topojson.feature(json, json.objects.map_geo).features)
+            .enter()
+            .append("path")
+            .attr("stroke", "#999")
+            .attr("fill", "none")
+            .attr("d", path);
+    })
+
+    d3.json("N02-15_RailroadSection.json", function(json) {
+        svg.selectAll("path")
+            .data(json.features)
+            .enter()
+            .append("path")
+            .attr("class", function(d) {
+                return "N02_002_" + d.properties.N02_002;
+            })
+            .attr("fill", "none")
+            .attr("d", path);
+    });
+</script>
+
+</body>
+</html>
